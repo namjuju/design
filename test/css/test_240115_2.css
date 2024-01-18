@@ -1,0 +1,45 @@
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff'); font-weight:700; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff'); font-weight:900; font-style:normal; }
+body {
+    font-family: 'Pretendard', serif;
+    font-size: 15px;
+    color: #3d3d3d;
+    font-weight: 400;
+    line-height: 1.25;
+}
+/* *은 와이드카드라고 해서 모든 태그를 뜻함 */
+* {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+    width: 1280px;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 50px;  
+    color: #1d1d1d;
+    font-weight: 900;
+    text-align: center;
+    margin: 73px 0 13px 0; /* 위 - 오른쪽 -아래 -왼쪽 */
+}
+.sub_tit {
+    text-align: center;
+}
+h2 {
+    font-size: 30px;
+    font-weight: 900;
+    margin: 85px 0 0 0;
+}
+h3 {
+    font-size: 23px;
+    font-weight: 900;
+    margin: 25px 0 12px 0;
+}
+p {
+    margin: 0 0 15px 0;
+}
+.color_system {
+    background-color: #f4f4f4;
+}

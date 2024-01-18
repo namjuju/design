@@ -1,0 +1,144 @@
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff'); font-weight:700; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff'); font-weight:800; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff'); font-weight:900; font-style:normal; }
+body {
+    font-family: 'Pretendard', serif;
+    font-size: 17px;
+    color: #333;
+    font-weight: 400;
+    line-height: 1.2;
+    word-break: keep-all;
+}
+.wrapper {
+    width: 1280px; 
+    margin: 0 auto; 
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul, ol, li {
+    list-style: none;
+}
+a {/* a태그는 파란색 언더라인이 기본으로 생성된다*/
+    text-decoration: none; /*언더라인제거*/
+    color: inherit; /*a태그 색상을 거부하고 바디태그 상속을 받을 수 있게 해줌*/
+}
+
+header {
+    height: 100px;
+}
+header .logo {
+    float: left;
+    margin: 32px 0 0 0;
+}
+header .logo a {
+    display: block;
+}
+header .gnb {
+    float: right;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    font-size: 22px;
+    color: #1d1d1d;
+    padding: 37px 28px 37px 28px;
+    display: block;
+}
+header .gnb ul li a:hover {
+    text-decoration: underline;
+}
+.visual {
+    /* 경로에서 ../는 폴더 밖으로 나가라는 명령 */
+    height: 719px;
+    background: url(../imags/visual_bg.png) center center no-repeat;
+    color: #fff;
+    text-align: center;
+}
+.visual h2 {
+    font-size: 55px;
+    font-weight: 800;
+
+    padding: 278px 0 0 0;
+    /* 여백은 margin 으로 줬는데 이상하게 들어가면 padding 으로 바꾸면됨 */
+}
+.visual p {
+    font-size: 20px;
+    
+}
+.biz h2 {
+    font-size: 55px;
+    color: #1d1d1d;
+    font-weight: 800;
+    text-align: center;
+    margin: 81px 0 39px 0;
+    line-height: 1.1;
+}
+.biz h2 strong {
+    font-size: 20px;
+    color: #333;
+    font-weight: 400;
+}
+.biz ul {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.biz ul li h3 {
+    font-size: 30px;
+    font-weight: 400;
+    margin: 26px 0 15px 0;
+}
+.biz ul li a {
+    border: 1px solid #858585;
+    padding: 12px 75px 12px 75px;
+    display: inline-block;
+    /* display: block; 넓이 100% 됨 (나를 감싸는 요소 100% 넓이)
+    넓이가 padding 값과 같길 원하면 display: inlin-block로 하면됨 */
+    margin: 23px 0 0 0;
+}
+.brand {
+    height: 750px;
+    background: url(../imags/bland_bg.png) center center no-repeat;
+    margin: 129px 0 0 0;
+    color: #fff;
+    text-align: center;
+}
+.brand h2 {
+font-size: 55px;
+font-weight: 800;
+margin: 0 0 16px 0;
+}
+.brand p {
+    font-size: 26px;
+    color: rgba(255, 255, 255,0.8);
+    font-weight: 400;
+    padding: 299px 0 0 0;
+}
+.brand a {
+    border: 1px solid rgba(255,255,255,0.8);
+    padding: 12px 28px 12px 28px;
+    display: inline-block;
+}
+footer {
+    background-color: #1d1d1d;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 52px 0 60px 0;
+}
+footer .f_nav {
+    display: flex;
+    margin: 0 0 10px 0;
+}
+footer .f_nav li {
+    margin: 0 20px 0 0;
+}
+footer .f_nav .privacy {
+    font-weight: 800;
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
+}
