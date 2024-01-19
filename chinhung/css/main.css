@@ -14,6 +14,10 @@ body {
     width: 1280px; 
     margin: 0 auto; 
 }
+#wrap {/*id="wrap"에 적용되는 스타일*/
+    min-width: 1280px;
+/* pc형에서 wrapper 사이즈 보다 브라우저 넓이가 작을 때 가로스크롤바 생성되고 오른쪽에 background가 짤리는 현상을 완화하기 위하여 최소넓이를 입력 */
+}
 * {
     padding: 0;
     margin: 0;
