@@ -46,6 +46,9 @@ a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
     color: inherit; 
     /* 색상은 상속받아 - 파란색 말고 누군가가 상속해준 스타일을 적용  */
 }
+address, em {
+    font-style: normal;
+}
 
 .header {
     height: 100px;
@@ -136,4 +139,120 @@ a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
 }
 .biz .edu .btn_wrap a {
     margin: 0 0 0 10px;
+}
+
+.bbs {
+    background: url(../images/bbs_bg.png) center top no-repeat;
+    color: #fff;
+}
+.bbs .notice {
+    display: flex;
+    justify-content: space-between;
+}
+.bbs .notice .tit {
+    margin: 110px 0 0 0;
+}
+.bbs .notice .tit h2 {
+    font-size: 40px;
+    font-weight: 900;
+}
+.bbs .notice .tit p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 5px 0 17px 0;
+}
+.bbs .notice .tit a {
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 9px 17px 9px 17px;
+    display: inline-block;
+}
+.bbs .notice ul {
+    margin: 107px 0 0 0;
+    width: 735px;
+}
+.bbs .notice ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);   
+}
+.bbs .notice ul li:last-child {
+    border-bottom: 0;
+}
+.bbs .notice ul li a {
+    display: flex;
+    justify-content: space-between;
+    line-height: 58px;
+    font-size: 20px;
+}
+.bbs .notice ul li a strong {
+    font-weight: inherit;
+}
+.bbs .notice ul li a span {
+    color: rgba(255, 255, 255, 0.8);
+}
+.bbs .video {
+    margin: 137px 0 0 0;
+}
+.bbs .video h2 {
+    font-size: 40px;
+    font-weight: 900;
+    margin: 0 0 25px 0;
+}
+.bbs .video ul {
+    display: flex;
+    justify-content: space-between;
+}
+.bbs .video ul li {
+    width: 299px;
+}
+.bbs .video ul li a strong {
+    color: #1d1d1d;
+    font-size: 20px;
+    font-weight: inherit;
+    margin: 10px 0 0 0;
+    display: block;
+}
+.bbs .video ul li a img {
+    border: 3px solid #1A3B70;
+    box-shadow: 3px -3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    background-color: #2d2d2d;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 100px 0 0 0;
+    padding: 65px 0 70px 0;
+}
+.footer .f_nav {
+    display: flex;
+}
+.footer .f_nav li {
+    margin: 0 30px 0 0;
+    /* border-left: 1px solid rgba(255, 255, 255, 0.4); */
+    position: relative;
+}
+.footer .f_nav li::after {
+    position: absolute;
+    right: -15px;
+    top: 3px;
+    display: block;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+    content: "";
+}
+.footer .f_nav li:last-child::after {
+    display: none;
+}
+.footer .f_nav li.privacy {
+    font-weight: 900;
+}
+.footer .f_info {
+    display: flex;
+    margin: 28px 0 25px 0;
+}
+.footer .f_info span,
+.footer .f_info address {
+    margin: 0 26px 0 0;
+}
+.footer .copyright {
+    color: rgba(255, 255, 255, 0.8);
 }
