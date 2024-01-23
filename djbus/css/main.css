@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff) format('woff2'), url(../fonts/Pretendard-Regular.woff2) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 900;
+    font-display: swap;
+    src: local('Pretendard Black'), url(../fonts/Pretendard-Black.woff) format('woff2'), url(../fonts/Pretendard-Black.woff2) format('woff');
+}
+body {
+    font-family: 'Pretendard', sans-serif; /* 서체 */
+    font-size: 15px; /* 크기 */
+    color: #3d3d3d; /* 글자색상 */
+    font-weight: 400; /* 글자의 두께 */
+    line-height: 1.2; /* auto */
+    word-break: keep-all; /* 단어를 묶어서 줄바꿈 */
+    letter-spacing: -0.05em; /* 자간 */
+}
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1280px; /* 홈페이지 넓이 */
+    margin: 0 auto;  /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* PC형에서 wrapper사이즈보다 브라우저 넓이가 작을때
+       가로스크롤바가 생성되는데 오른쪽에 background가 
+       짤리는 현상이 생김.  
+       가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 
+       서비스 하기 위해서 최소 넓이를 입력 */
+}
+/* 태그초기화 - 태그의 기본스타일 제거 */
+* {
+    padding: 0; /* 모든 태그의 여백삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넓이를 늘리는 요소인데 넓이를 늘리지 않도록 하는 속성 */
+}
+ul, ol, li { 
+    list-style: none; /* ul li앞에 동그라미 삭제 */
+}
+a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline 제거 */
+    color: inherit; 
+    /* 색상은 상속받아 - 파란색 말고 누군가가 상속해준 스타일을 적용  */
+}
+
+.header {
+    height: 100px;
+}
+.header .logo {
+    float: left;
+    margin: 23px 0 0 0;
+}
+.header .gnb {
+    float: right;
+}
+.header .gnb ul {
+    display: flex;
+}
+.header .gnb ul li a {
+    color: #1d1d1d;
+    font-size: 20px;
+    padding: 38px 19px 38px 19px;
+    display: block;
+}
+
+.visual {
+    height: 750px;
+    background: url(../images/visual_bg.png) center center no-repeat;
+    color: #fff;
+}
+.visual strong {
+    font-size: 20px;
+    font-weight: 400;
+    padding: 254px 5px 2px 0;
+    display: block;
+    text-align: right;
+
+}
+.visual h2 {
+    font-size: 50px;
+    font-weight: 900;
+    text-align: right;
+}
+
+
+.biz .art, .biz .edu {
+    display: flex;
+}
+.biz .edu {
+    justify-content: flex-end;
+    text-align: right;
+}
+.biz .art .inner {
+    margin: 0 0 0 100px;
+    width: 444px;
+}
+.biz .edu .inner {
+    margin: 0 100px 0 0;
+    width: 444px;
+}
+.biz h2 {
+    font-size: 40px;
+    font-weight: 900;
+    color: #1d1d1d;
+    margin: 77px 0 7px 0;
+}
+.biz .sub_tit {
+    font-size: 20px;
+    font-weight: 400;
+    color: #1d1d1d;
+    margin: 0 0 8px 0;
+}
+.biz .btn_wrap {
+    margin: 15px 0 0 0;
+}
+.biz .btn_wrap a {
+    border: 1px solid #ccc;
+    padding: 9px 17px 9px 17px;
+    display: inline-block;
+}
+.biz .art .btn_wrap a {
+    margin: 0 10px 0 0;
+}
+.biz .edu .btn_wrap a {
+    margin: 0 0 0 10px;
+}
