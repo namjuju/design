@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff) format('woff2'), url(../fonts/Pretendard-Regular.woff2) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 900;
+    font-display: swap;
+    src: local('Pretendard Black'), url(../fonts/Pretendard-Black.woff) format('woff2'), url(../fonts/Pretendard-Black.woff2) format('woff');
+}
+body {
+    font-family: 'Pretendard', sans-serif; /* 서체 */
+    font-size: 15px; /* 크기 */
+    color: #3d3d3d; /* 글자색상 */
+    font-weight: 400; /* 글자의 두께 */
+    line-height: 1.4; /* auto */
+    word-break: keep-all; /* 단어를 묶어서 줄바꿈 */
+}
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1280px; /* 홈페이지 넓이 */
+    margin: 0 auto;  /* 가운데 정렬 */
+}
+* {
+    padding: 0; /* 모든 태그의 여백삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넓이를 늘리는 요소인데 넓이를 늘리지 않도록 하는 속성 */
+}
+a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline 제거 */
+    color: inherit; 
+    /* 색상은 상속받아 - 파란색 말고 누군가가 상속해준 스타일을 적용  */
+}
+
+.messenger h2 {
+    font-size: 30px;
+    font-weight: 900;
+    color: #1d1d1d;
+    margin: 60px 0 20px 0;
+}
+.messenger .sub_tit {
+    font-size: 20px;
+    font-weight: 900;
+    color: #07B53B;
+    margin: 0 0 10px 0;
+}
+.messenger .m_tit .btn_wrap {
+    display: flex;
+    margin: 20px 0 40px 0;
+}
+
+.messenger .m_tit .bk {
+    border: 1px solid #666;
+    padding: 8px 43px 8px 43px;
+    display: block;
+    margin: 0 5px 0 0;
+}
+.messenger .m_tit .gr {
+    border: 1px solid #07B53B;
+    padding: 8px 43px 8px 43px;
+    display: block;
+    color: #07B53B;
+}
+.store {
+    background: url(../imags/line.bg.png) center center no-repeat;
+    color: #fff;
+    text-align: center;
+    height: 598px;
+}
+.store h2 {
+    font-size: 30px;
+    font-weight: 900;
+    padding: 60px 0 20px 0;
+    margin: 65px 0 0 0;
+}
+.store .btn_wrap {
+    border: 1px solid #fff;
+    padding: 8px 43px 8px 43px;
+    display: inline-block;
+    margin: 24px 0 41px 0;
+}
