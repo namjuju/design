@@ -218,4 +218,112 @@ justify-content: space-between;
         padding: 0 35px;
         display:inline-block;
     }
+}/* media */
+
+.news {
+    margin: 80px 0 0 0;
 }
+.news h2 {
+    font-size: 42px;
+    font-weight: 400;
+    color: #aaa;
+    margin-bottom: 22px;
+}
+.news h2 strong {
+    color: #1e1e1e;
+}
+.news ul {
+    display: flex;
+    justify-content: space-between;
+}
+.news ul li {
+    width: 299px;
+}
+/* a태그안에 많은 요소들이 들어가면 display를 주는게 좋음 */
+.news ul li a {
+    display: block;
+}
+.news ul li a strong {
+    display: block; 
+    /* 제목은 strong, 날짜는 span으로 - 디자인상 줄바꿈 필요
+    이때 display:block; 각 요소가 block요소로 변경되어 둘이 
+    한줄에 나타나지 않음  */
+    margin: 8px 0;
+}
+.news ul li a span {
+    display: block;
+    color: #aaa;
+}
+.news .notice_wrap {
+    position: relative;
+    /* more정렬의 중심 */
+}
+.news .more {
+    /*.notice_wrap 영역기준으로*/
+    position: absolute;
+    right: 0;
+    top: 44px;
+}
+.news .more a {
+    border: 1px solid #bbb;
+    border-radius: 30px; /* 높이의 절반 */
+    line-height: 51px;
+    /* 버튼은 line-height의 높이를 갖고 
+    글자도 위아래 가운데 정렬함 */
+    padding: 0 33px;
+    display: block;
+}
+/* a태그에 마우스를 오버했을때 */
+.news .more a:hover {
+    background-color: #1d1d1d;
+    border: 1px solid #1d1d1d;
+    color: #fff;
+}
+@media screen and (max-width:640px) {
+    .news {
+        margin: 45px 0 0 0;
+    }
+    .news h2 {
+        font-size: 25px;
+        margin-bottom: 14px;
+    }
+    .news h2 br{
+        display: none;
+    }
+    .news ul {
+        flex-wrap: wrap;
+        /*한줄에 2개의 레이아웃으로 변경할때
+        플렉스를 유지하고 flex-wrap: wrap
+        줄바꿈 허용*/
+    }
+    .news ul li {
+        width: calc(50% - 8px);
+        margin-bottom: 20px;
+    }
+    /* a태그안에 많은 요소들이 들어가면 display를 주는게 좋음 */
+    .news ul li a img {
+        width: 100%;
+    }
+    .news ul li a strong {
+        margin: 8px 0;
+        line-height: 1.2;
+        height: 2.4em;
+        overflow: hidden;
+    }
+    .news .more {
+        /*.notice_wrap 영역기준으로*/
+        position: relative;
+        right: auto;
+        top: auto;
+        margin: 20px 0 50px 0;
+        text-align: center;
+    }
+    .news .more a {
+        border-radius: 20px; /* 높이의 절반 */
+        line-height: 37px;
+        /* 버튼은 line-height의 높이를 갖고 
+        글자도 위아래 가운데 정렬함 */
+        padding: 0 35px;
+        display: inline-block;
+    }
+}/*media*/
