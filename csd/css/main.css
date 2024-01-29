@@ -65,6 +65,12 @@ h1, h2, h3, h4, h5, h6, strong {
     font-size: inherit;
     font-weight: inherit;
 }
+button {
+    background-color: transparent; /*배경투명*/
+    border: 0; /*테두리삭제*/
+    color: inherit; /*브라우저가 주는 값 삭제*/
+    font-family: inherit; /*버튼은 서체도 바뀜 - 상속 */
+}
 .header {
     /* body를 기준으로 정렬 
     position값을 주면 (예외 relative) block요소라도 
@@ -361,11 +367,18 @@ active 클래스를 준 li를 선택하는 선택자 */
 }
 .community .service ul {
     display: flex;
+    /* flex는 하위요소를 모두다 좌우 한줄로 배치하려는 특징이 있음.
+    그래서 넓이를 줄여서라도 좌우로 배치
+    내 넓이에 따라서 한줄에 들어갈 수 있는 만큼만 들어가고 줄바꿈이 
+    되려면  flex-wrap: wrap; */
     flex-wrap: wrap;
     justify-content: space-between;
 }
 .community .service ul li {
     width: 190px;
+      /* li의 사이즈와 a사이즈를 동일하게 주려면
+        li 한테 넓이를 주고 a한테 높이를 주는 것이
+        best */
     margin-bottom: 21px;
 }
 .community .service ul li a {
@@ -388,7 +401,7 @@ active 클래스를 준 li를 선택하는 선택자 */
 }
 .footer {
     background-color: #222;
-    color: #ccc;
+    color: rgba(255, 255, 255, 0.8);
     padding: 77px 0 89px 0;
 }
 .footer .footer_wrap {
@@ -398,10 +411,27 @@ active 클래스를 준 li를 선택하는 선택자 */
 .footer .f_nav {
     display: flex;
 }
-.footer .f nav li {
+.footer .f_nav li {
     margin-right: 52px;
+    /* border-right: 1px solid rgba(255, 255, 255, 0.3); 
+        li 메뉴 사이에 선은 border로 코딩 불가 
+        높이가 제어가 안됨. 위에서 아래로 내리고 싶은 위치가 조정이 안됨. 
+        그래서 before after 선택자를 이용해서 선을 그어줌. */
+    position: relative; /* after 가상선택자 정렬의 기준 */
 }
-.footer .f nav li.privacy {
+.footer .f_nav li::after {
+    position: absolute;
+    right: -29px;
+    top: 6px;
+    width: 1px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.3);
+    content: ""; /* before after 가상선택자는 content 필수 */
+}
+.footer .f_nav li:last-child:after {
+    display: none; /* 마지막 li의 선을 숨기기 */
+}
+.footer .f_nav li.privacy {
     font-weight: 700;
 }
 .footer .f_info {
@@ -411,4 +441,13 @@ active 클래스를 준 li를 선택하는 선택자 */
 .footer .f_info address,
 .footer .f_info span {
     margin-right: 52px;
+}
+.footer .family_site button {
+    width: 150px;
+    line-height: 29px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
 }
