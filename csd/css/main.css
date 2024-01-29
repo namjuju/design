@@ -445,6 +445,10 @@ active 클래스를 준 li를 선택하는 선택자 */
 .footer .family_site button {
     width: 150px;
     line-height: 29px;
+    /* 버튼의 높이를 행간으로 줌. 
+    버튼은 그 높이를 갖어야하고 글자는 그 높이에 위아래 가운데 배치
+    그걸 한번에 해결하는게 line-height 
+    만약 내가 그냥 height로 줬다면 글자에 상단여백을 추가로 줘야함. */
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 5px;
     display: flex;
