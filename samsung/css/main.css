@@ -1,14 +1,18 @@
-@charset "utf-8";
+@charset "utf-8"; /* 이css문서는 UTF-8방식으로 인코딩 되어 있습니다. */
 @import url(default.css);
+/* 본고딕 CND방식으로 사용할때 폰트를 정의하는 font-face가 입력된 css를 import 불러다가 
+   사용하는 방식을 많이 씀 
+   이 방식은 간단하지만 문제가 google이 서비스를 중단하면 사용 못함. 
+   font 파일을 저장해서 사용하는 방식을 씀 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
 html, body {
     font-family: 'Noto Sans KR', sans-serif; /* 서체 */
-    font-size: 20px; /* 크기 */
+    font-size: 15px; /* 크기 */
     color: #3d3d3d; /* 글자색상 */
     font-weight: 400; /* 글자의 두께 */
-    line-height: 1.2; /* auto */
+    line-height: 1.4; /* auto */
     word-break: keep-all; /* 단어를 묶어서 줄바꿈 */
-    letter-spacing: -0.05em; /* 자간 */
+    letter-spacing: -0.05em;
 }
 .wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
     width: 1280px; /* 홈페이지 넓이 */
@@ -21,4 +25,153 @@ html, body {
        짤리는 현상이 생김.  
        가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 
        서비스 하기 위해서 최소 넓이를 입력 */
+}
+
+/*640px 이하일때 스타일*/
+@media screen and (max-width: 640px) {
+    html, body {
+        font-size: 13px; /* 크기 */
+    }
+    .wrapper {
+        width: auto;
+            /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨 
+           디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문에 
+           그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
+        margin: 0 20px;
+    }
+    #wrap {
+        min-width: auto; /* 홈페이지의 최소넓이 제한하지 않음 */
+    }
+}
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 100; /*다른요소보다 가장 높이 올리는 것 최대값 100*/
+    color: #FFF;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+.header .logo {
+    float: left;
+    margin-top: 20px;
+}
+.header .logo a {
+    width: 182px;
+    height: 60px;
+    display: block;
+    /*contain : 이미지를 자르지 않고 브라우저 크기에 따라 변경됨*/
+    background: url(../images/logo_w.svg) no-repeat center center / contain;
+    font-size: 0;
+    line-height: 0;
+}
+.header .inner {
+    float: right;
+    display: flex;
+    align-items: center;
+
+}
+.header .gnb ul {
+    display: flex;
+}
+.header .gnb ul li a{
+    font-size: 22px;
+    padding: 34px 24px; 
+    display: block;
+}
+.header .login {
+    width: 30px;
+    height: 30px;
+    background: url(../images/login_w.svg) no-repeat center center;
+    font-size: 0;
+    line-height: 0;
+    margin: 0 37px 0 37px;
+}
+.header .lang {
+    width: 30px;
+    height: 30px;
+    background: url(../images/language_w.svg) no-repeat center center;
+    font-size: 0;
+    line-height: 0;
+}
+.header .gnb .gnb_open {
+    display: none;
+}
+@media screen and (max-width: 640px) {
+    .header {
+        height: 50px;
+    }
+    .header .logo {
+        margin-top: 10px;
+    }
+    .header .logo a {
+        width: 77px;
+        height: 25px;
+    }
+    .header .gnb .gnb_open {
+        display: block;
+        width: 19px;
+        height: 17px;
+        font-size: 0;
+        line-height: 0;
+        background: url(../images/menu_w.svg) no-repeat center center;
+        margin-top: 15px;
+    }
+    .header .gnb ul {
+        display: none;
+    }
+    .header .login {
+        display: none;
+    }
+    .header .lang {
+        display: none;
+    }
+}
+.visual {
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    color: #FFF;
+
+    text-align: center;
+}
+    /* visual의 높이가 브라우저의 높이에 따라서 바뀜
+    그래서 h2태그가 위에서 부터의 여백이 그때그때 달라짐 
+    --> 고정값으로 줄 수가 없음 
+    사이즈가 변경될때 가운데는 바뀌지 않음...
+    h2태그는 원래 디자인 자체가 visual영역에 위아래 가운데 디자인
+    코딩도 위아래 가운데에서 부터 시작해서 여백을 줘야함 */
+.visual .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 314px; /*최소높이*/
+    height: 100vh; /*브라우저 높이와 동일한 높이*/
+}
+.visual h2 {
+    font-size: 50px;
+    font-weight: 700;
+}
+.visual h2 br {
+    display: none;
+}
+.visual p {
+    font-size: 17px;
+    margin-top: 14px;
+}
+@media screen and (max-width: 640px) {
+    .visual .inner {
+        min-height: 250px; /*최소높이*/
+        height: auto; /*브라우저 높이와 동일한 높이*/
+    }
+    .visual h2 {
+        font-size: 25px;
+        font-weight: 700;
+    }
+    .visual h2 br {
+        display: block;
+    }
+    .visual p {
+        display: none;
+        }
 }

@@ -20,15 +20,17 @@ address, em {
        그래서 태그에 있는 기본 기울어짐을 초기화 함 */
     font-style: normal;
 }
-/*글자를 두껍게 하고 글자크기를 조정하는 태그
-본래의 기능을 초기화시키고 body값을 적용시크는 것 */
+/* 글자를 두껍게하고 글자크기를 조정하는 태그 - 
+   body가 선언한 속성대로 적용될 수 있도록 초기화 
+   브라우저가 기본적으로 적용한 스타일 적용되지 않도록 막기 */
 h1, h2, h3, h4, h5, h6, strong {
     font-size: inherit;
     font-weight: inherit;
 }
+/* button태그는 기본스타일 많음 */
 button {
     background-color: transparent; /*배경투명*/
-    border: 0; /*테두리삭제*/
-    color: inherit; /*브라우저가 주는 값 삭제*/
-    font-family: inherit; /*버튼은 서체도 바뀜 - 상속 */
+    border: 0; /* 테두리 삭제 */
+    color: inherit; /* 브라우저가 주는 값 삭제 */
+    font-family: inherit; /* button은 서체도 바뀜 - 상속 */
 }
