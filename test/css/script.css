@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.box {
+    width: 400px;
+    height: 600px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    background-color: #ededed;
+}
+.box.active {
+    background-color: crimson;
+    color: #FFF
+}
+.btn_top {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    color: #fff;
+    background-color: #1d1d1d;
+}

@@ -1,0 +1,208 @@
+@charset "utf-8";
+@import url(default.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+html, body {
+    font-family: 'Noto Sans KR', sans-serif; /* 서체 */
+    font-size: 15px; /* 크기 */
+    color: #3d3d3d; /* 글자색상 */
+    font-weight: 400; /* 글자의 두께 */
+    line-height: 1.4; /* auto */
+    word-break: keep-all; /* 단어를 묶어서 줄바꿈 */
+    letter-spacing: -0.05em;
+}
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1280px; /* 홈페이지 넓이 */
+    margin: 0 auto;  /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* PC형에서 wrapper사이즈보다 브라우저 넓이가 작을때
+       가로스크롤바가 생성되는데 오른쪽에 background가 
+       짤리는 현상이 생김.  
+       가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 
+       서비스 하기 위해서 최소 넓이를 입력 */
+}
+
+/* 640px 이하일때 스타일 - 640이하는 모바일 초과는 탭  */
+@media screen and (max-width: 640px) {
+    html, body {
+        font-size: 13px;
+    }
+    .wrapper {
+        width: auto;
+            /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨 
+           디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문에 
+           그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
+        margin: 0 20px;
+    }
+    #wrap {
+        min-width: auto; /* 홈페이지의 최소넓이 제한하지 않음 */
+    }
+}/*media*/
+
+.header {
+    position: absolute; /*bady를 기준*/
+    left: 0;
+    top: 0;
+    z-index: 100; /*다른 position 값을 가지고 있는 요소보다 더 위에 배치*/
+    width: 100%;
+    height: 100px;
+    color: #FFF;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.header .gnb {
+    float: right;
+}
+.header .gnb .gnb_open,
+.header .gnb .gnb_close {
+    display: none;
+}
+/*
+자식선택자
+<nav class="gnb">
+    <ul>                        -> .gnb > ul {}
+        <li>
+            <a href=""></a>
+            <ul></ul>           -> .gnb > ul > li > ul {}
+        </li>
+    </ul>
+</nav>
+*/
+.header .gnb > ul {
+    display: flex;
+}
+.header .gnb > ul > li {
+    width: 173px;
+    text-align: center;
+}
+.header .gnb > ul > li > a {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 100px;
+    display: block;
+}
+.header .gnb > ul > li:hover > a,
+.header .gnb > ul > li:focus > a {
+    color: #004289;
+}
+.header .gnb > ul > li > ul {
+    margin: 16px 0 0 0;
+    display: none;
+}
+.header .gnb > ul > li > ul > li > a {
+    display: block;
+    line-height: 35px;
+    font-size: 17px;
+}
+.header .gnb > ul > li > ul > li > a:hover,
+.header .gnb > ul > li > ul > li > a:focus {
+    color: #004289;
+}
+.header.menu_open {
+    background-color: #FFF;
+    color: #1d1d1d;
+    border-bottom: 1px solid #ededed;
+}
+.header.menu_open::before{
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    height: 1px;
+    background-color: #ededed;
+    content: "";
+}
+.header.menu_open::after {
+    position: absolute; /*header가 기준*/
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 350px;
+    background-color: #fff;
+    content: "";
+}
+.header.menu_open .gnb > ul > li > ul {
+    display: block;
+}
+
+.visual {
+    height: 1000px;
+    background: url(../images/menu_visual_bg.png) no-repeat center center / cover;
+}
+
+@media screen and (max-width: 640px) {
+    .header {
+        height: 50px;
+    }
+    .header .gnb .gnb_open {
+        display: block;
+        width: 20px;
+        height: 20px;
+        font-size: 0;
+        line-height: 0;
+        background: url(../images/menu_gnb_op.svg) no-repeat center center;
+        margin-top: 15px;
+    }
+    .header .gnb > ul {
+        display: none;
+    }
+    .header.menu_mobile .gnb > ul {
+        display: block;
+    }
+    .header.menu_mobile .gnb .gnb_close {
+        display: block;
+        width: 20px;
+        height: 20px;
+        font-size: 0;
+        line-height: 0;
+        background: url(../images/menu_gnb_cl.svg) no-repeat center center;
+        margin-top: 15px;
+        position: relative;
+        z-index: 102;
+    }
+    .header.menu_mobile .gnb .gnb_open {
+        display: none;
+    }
+    .header .gnb > ul {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #FFF;
+        color: #1d1d1d;
+        padding: 76px 20px 0 20px;
+    }
+    .header .gnb > ul > li {
+        width: auto;
+        text-align: left;
+    }
+    .header .gnb > ul > li > a {
+        font-size: 20px;
+        line-height: 45px;
+        position: relative;
+    }
+    .header .gnb > ul > li > a::after {
+        position: absolute;
+        right: 0;
+        top: 14px;
+        width: 24px;
+        height: 24px;
+        background: url(../images/menu_da.svg) no-repeat center center;
+        content: "";
+    }
+    .header .gnb > ul > li > ul {
+        margin: 5px 0 5px 20px;
+        display: none;
+    }
+    .header .gnb > ul > li > ul > li > a {
+        line-height: 30px;
+        font-size: 15px;
+        color: #3d3d3d;
+    }
+    .visual {
+        height: 324px;
+    }
+    
+}
