@@ -65,4 +65,11 @@ $(document).ready(function(){
     $(window).scroll(function(){
         scroll_chk() // 함수의 실행 -- 스크롤 할 때 마다
     })
+
+    /* 마우스 오버를 하면 기존에  active 지우고 새로 오버한 이미지만 active가 실행 */
+    $('.interview .list ul li').on('mouseenter', function(){
+        $('.interview .list ul li').removeClass('active')
+        $(this).addClass('active')
+    })
+
 })

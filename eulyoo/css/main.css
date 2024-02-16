@@ -52,7 +52,7 @@ html, body {
        짤리는 현상이 생김.  
        가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 
        서비스 하기 위해서 최소 넓이를 입력 */
-       overflow: hidden;
+       /*overflow: hidden;*/
        /*1280px 이상의 브라우저에서 넘치는 이미지를 잘라버림*/
 }
 
@@ -330,6 +330,7 @@ html, body {
 
 .book {
     margin: 120px 0 0 0;
+    overflow: hidden;
 }
 .book .inner {
     position: relative;
@@ -504,7 +505,12 @@ html, body {
 }
 .interview {
     background-color: #F4F4F4;
-    margin: 100px 0 0 0;
+    width: 100%;
+    height: 450px;
+    margin: 100px 0 400px 0;
+}
+.interview .wrapper {
+    position: relative; /* more 정렬의 기준 */
 }
 .interview .tit {
     padding: 60px 0 0 0;
@@ -520,14 +526,16 @@ html, body {
     font-size: 20px;
 }
 .interview .list {
-    margin: 80px 0 0 0;
+    margin: 60px 0 0 0;
 }
 .interview .list ul {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
 }
 .interview .list ul li {
     width: 416px;
+    position: relative; /*cnt정렬의 기준*/
 }
 .interview .list ul li:nth-child(2) {
     margin-top: 42px;
@@ -538,12 +546,466 @@ html, body {
 .interview .list ul li a .photo {
     border-radius: 60px 0 60px 0;
     overflow: hidden;
+    /* 이미지를 감싸는 요소에 border-radius를 주는 경우
+    overflow:hidden;을 꼭줘야 이미지가 짤림 */
     line-height: 0;
     font-size: 0;
 }
+/* 디자인상 두번째 li에 스타일이 다르다면 
+css에서도 nth-child로 선택한다. */
 .interview .list ul li:nth-child(2) a .photo {
-    border-radius: 0 60px 0 60px 0;
+    border-radius: 0 60px 0 60px;
 } 
+.interview .list ul li a .photo {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
 .interview .list ul li a .photo img {
-    filter: grayscale(100%);
+    filter: grayscale(100%); /* 흑백 */
+    transition: 0.3s;
+}
+.interview .list ul li a .cnt {
+    position: absolute; /*li가 정렬의 기준*/
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px 13px 40px;
+    transition: 0.03s;
+}
+.interview .list ul li a .cnt h3 {
+    font-size: 25px;
+    font-weight: 700;
+}
+.interview .list ul li a .cnt p {
+    display: none;
+}
+.interview .list ul li a .cnt span {
+    font-size: 0;
+    line-height: 0;
+    width: 38px;
+    height: 38px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='42' height='42' viewBox='0 0 42 42' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.25 22.75H8.75V19.25H19.25V8.75H22.75V19.25H33.25V22.75H22.75V33.25H19.25V22.75Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+/* li에 active 들어갔을때 스타일이 바뀌는건 
+pc에서만 적용되는 스타일 
+모바일에서는 기본 스타일만 존재함.
+미디어쿼리
+*/
+
+@media screen and (min-width:641px){
+    /* 오버되었을때 */
+    .interview .list ul li.active a .photo {
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    }
+    .interview .list ul li.active a .photo img {
+        filter: grayscale(0%); /* 칼라 - 숫자 0 단위 없음 */
+    }
+    .interview .list ul li.active a .cnt {
+        bottom: -86px;
+        width: 352px;
+        height: 191px;
+        display: block; /* flex 해제 */
+        padding: 30px 40px 0 40px;
+        background-color: #2C271A;
+        border-radius: 50px 0 50px 0;
+    }
+    .interview .list ul li:nth-child(2).active a .cnt {
+        border-radius: 0 50px 0 50px;
+    }
+    .interview .list ul li.active a .cnt p {
+        display: block;
+        margin: 10px 0;
+        /* 콘텐츠를 3줄로 제한 */
+        line-height: 1.2;
+        height: 3.6em; /* 행간 * 줄수 (단위는 em) */
+        overflow: hidden;
+    }
+    .interview .list ul li.active a .cnt span {
+        font-size: 15px;
+        line-height: 1.2;
+        width: auto;
+        height: auto;
+        background: none; /* 배경 삭제 */
+        display: block; /* width:100% */
+        text-align: right;
+        position: relative; /* before 정렬의 기준 */
+    }
+    .interview .list ul li.active a .cnt span::before {
+        position: absolute; /* span을 기준으로 정렬 */
+        left: 0;
+        top: 7px;
+        width: calc(100% - 6em);
+        /* 6em 이라는 단위는 글자 6글자의 넓이 
+           반응형에서 글자의 크기가 변경되면 
+           px로 한경우 계속 글자가 바뀔때마다 
+           넓이를 변경해야함 
+           하지만 em이라는 단위를 사용하면 
+           글자크기가 줄어도 변경을 안해도됨. 
+           글자의 크기에 상대크기로 글자수의 넓이를 줌 */
+        height: 1px;
+        background-color: rgba(255,255,255,0.2);
+        content: "";
+    }
+}
+
+.interview .more {
+    position: absolute;
+    right: 5px;
+    top: 150px;
+}
+.interview .more a {
+    width: 144px;
+    line-height: 45px;
+    font-size: 17px;
+    background-color: #fff;
+    border-radius: 50px;
+    display: block;
+    padding: 0 0 0 17px;
+    position: relative; /* after 정렬의 기준 */
+    transition: 0.2s;
+}
+.interview .more a::after {
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 7px;
+    top: 13px;
+    width: 50px;
+    height: 18px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 13H5V11H11V5H13V11H19V13H13V19H11V13Z' fill='%23666666'/%3E%3C/svg%3E%0A");    background-position: center center;    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 28px auto;
+    transition: 0.2s;
+}
+.interview .more a:hover {
+    background-color: #2A251A;
+    color: #fff;
+}
+.interview .more a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 13H5V11H11V5H13V11H19V13H13V19H11V13Z' fill='white'/%3E%3C/svg%3E%0A");    animation-name: more;
+    animation-name: more; 
+    animation-duration: 2s; 
+    animation-iteration-count:infinite; 
+    animation-timing-function:linear;
+}
+@media screen and (max-width: 640px) {
+    .interview {
+        margin: 57px 0 130px 0;
+        padding: 0 0 62px 0;
+    }
+    .interview .tit {
+        padding: 55px 0 0 0;
+        text-align: left;
+    }
+    .interview .tit h2 {
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+    .interview .tit p {
+        font-size: 13px;
+    }
+    .interview .list {
+        margin: 17px 0 0 0;
+    }
+    .interview .list ul li {
+        width: auto;
+    }
+    .interview .list ul li:nth-child(2),
+    .interview .list ul li:nth-child(3) {
+        display: none;
+    }
+    .interview .list ul li a .photo {
+        border-radius: 30px 0 30px 0;
+    }
+    .interview .list ul li a .photo img {
+        filter: grayscale(0%);
+        width: 100%;
+    }
+    .interview .list ul li a .cnt {
+        display: block;
+        padding: 30px 40px 0 40px;
+        background-color: #7A563C;
+        border-radius: 30px 0 30px 0;
+        height: 165px;
+    }
+    .interview .list ul li a .cnt h3 {
+        font-size: 17px;
+    }
+    .interview .list ul li a .cnt p {
+        display: block;
+        margin: 5px 0 15px 0;
+        line-height: 1.2;
+        height: 3.6em;
+        overflow: hidden;
+    }
+    .interview .list ul li a .cnt span {
+        font-size: 13px;
+        line-height: 1.2;
+        width: auto;
+        height: auto;
+        background: none;
+        position: relative;
+        display: block;
+        right: 0;
+        text-align: right;
+    }
+    .interview .list ul li a .cnt span::before {
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: calc(100% - 6em);
+        height: 1px;
+        background-color: rgba(255,255,255,0.2);
+        content: "";
+    }
+    .interview .more {
+        position: absolute;
+        right: 0;
+        top: 90px;
+    }
+    .interview .more a {
+        width: 95px;
+        line-height: 29px;
+        font-size: 13px;
+        background-color: #fff;
+        padding: 0 0 0 12px;
+    }
+    .interview .more a::after {
+        right: -5px;
+        top: 6px;
+        width: 45px;
+        height: 18px;
+        background-size: 19px auto;
+    }
+}
+
+.news {
+    background: url(../images/news_bg.png) no-repeat center center / cover;
+    color: #FFF;
+    padding: 0 0 100px 0;
+}
+.news .tit {
+    position: sticky;
+    top: 140px;
+    /* 주의사항 감싸는 요소가 overflow:hidden 있으면 적용이 안됨  */
+    float: left;
+    margin: 240px 0 0 0;
+}
+.news .tit h2 {
+    font-size: 45px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+.news .tit p {
+    font-size: 18px;
+}
+.news .list {
+    margin: 0 0 0 320px;
+    padding-top: 240px;
+}
+.news .list ul {
+    display: flex;
+    flex-wrap: wrap; /*여러줄가능*/
+    justify-content: space-between;
+}
+.news .list ul li {
+    width: 432px;
+    margin-bottom: 95px;
+}
+.news .list ul li:nth-child(even) {
+    margin-top: -89px;
+}
+.news .list ul li a {
+    display: block;
+}
+.news .list ul li a span {
+    display: block;
+    overflow: hidden;
+    line-height: 0;
+    font-size: 0;
+}
+.news .list ul li a span img {
+    transition: 0.3s;
+}
+.news .list ul li a:hover span img {
+    transform: scale3d(1.1, 1.1, 1);
+}
+.news .list ul li a h3 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 5px 0 10px 0;
+}
+.news .list ul li a p {
+    color: rgba(255, 255, 255, 0.7);
+}
+.news .inner {
+    position: relative;
+}
+.news .more {
+    position: absolute; /*inner 기준으로*/
+    top: 440px;
+    left: 0;
+}
+.news .more a {
+    display: block;
+    width: 144px;
+    line-height: 45px;
+    font-size: 17px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+    padding: 0 0 0 17px;
+    position: relative; /*after 정렬의 기준*/
+}
+.news .more a::after {
+    position: absolute; /*a를 기준으로 정렬*/
+    right: 7px;
+    top: 13px;
+    width: 50px;
+    height: 18px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 13H5V11H11V5H13V11H19V13H13V19H11V13Z' fill='%23666666'/%3E%3C/svg%3E%0A");    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 28px auto;
+    transition: 0.2s;
+}
+.news .more a:hover {
+    color: #FFF;
+    background-color: #7A563C;
+}
+.news .more a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 13H5V11H11V5H13V11H19V13H13V19H11V13Z' fill='white'/%3E%3C/svg%3E%0A");    animation-name: more;
+    animation-duration:3s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear; 
+}
+@media screen and (max-width: 640px) {
+    .news {
+        padding: 0 0 70px 0;
+    }
+    .news .tit {
+        position: relative;
+        top: auto;
+        float: none;
+        margin: 0;
+        padding: 60px 0 0 0;
+    }
+    .news .tit h2 {
+        font-size: 30px;
+        margin: 0 0 5px 0;
+    }
+    .news .tit p {
+        font-size: 13px;
+    }
+    .news .tit br {
+        display: none;
+    }
+    .news .list {
+        margin: 0;
+        padding-top: 30px;
+        overflow-x: auto;
+    }
+    .news .list ul {
+        flex-wrap: wrap; /*여러줄가능*/
+        width: 1328px;
+    }
+    .news .list ul li {
+        width: 208px;
+        margin-bottom: 0;
+    }
+    .news .list ul li:nth-child(even) {
+        margin-top: 0;
+    }
+    .news .list ul li a {
+        display: block;
+    }
+    .news .list ul li a span {
+        display: block;
+        overflow: hidden;
+        line-height: 0;
+        font-size: 0;
+    }
+    .news .list ul li a span img {
+        width: 100%;
+    }
+    .news .list ul li a h3 {
+        font-size: 25px;
+        font-weight: 700;
+        margin: 5px 0 10px 0;
+    }
+    .news .list ul li a p {
+        color: rgba(255, 255, 255, 0.7);
+        overflow: hidden;
+        height: 3.6em;
+        line-height: 1.2;
+    }
+    .news .inner {
+        position: relative;
+    }
+    .news .more {
+        top: 90px;
+        left: auto;
+        right: 0;
+    }
+    .news .more a {
+        width: 100px;
+        line-height: 30px;
+        font-size: 13px;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        border-radius: 50px;
+        padding: 0 0 0 13px;
+    }
+    .news .more a::after {
+        right: 12px;
+        top: 8px;
+        width: 12px;
+        height: 12px;
+
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 13H5V11H11V5H13V11H19V13H13V19H11V13Z' fill='%23666666'/%3E%3C/svg%3E%0A");    background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 28px auto;
+        transition: 0.2s;
+    }
+    .news .more a:hover {
+        color: #FFF;
+        background-color: #7A563C;
+    }
+    .news .more a:hover::after {
+    }
+}
+.footer {
+    background-color: #7A563C;
+    color: #FFF;
+    padding: 92px 0 100px 0;
+}
+.footer .inner {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.footer .footer_txt {
+    font-size: 30px;
+}
+.footer .footer_txt strong{
+    font-weight: 700;
+}
+.footer .footer_info strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+}
+.footer .footer_info span + strong {
+    margin-top: 57px;
+}
+.footer .footer_info span {
+    display: block;
+}
+.footer .copyright {
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
