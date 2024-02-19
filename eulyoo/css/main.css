@@ -488,10 +488,10 @@ html, body {
         right: 0;
     }
     .book .more a {
-        width: 95px;
+        width: 37px;
         line-height: 29px;
         padding: 0 0 0 12px;
-        font-size: 13px;
+        font-size: 0px;
         border: 1px solid #f0f0f0;
         background-color: inherit;
     }
@@ -697,6 +697,7 @@ pc에서만 적용되는 스타일
     .interview {
         margin: 57px 0 130px 0;
         padding: 0 0 62px 0;
+        height: 280px;
     }
     .interview .tit {
         padding: 55px 0 0 0;
@@ -769,9 +770,9 @@ pc에서만 적용되는 스타일
         top: 90px;
     }
     .interview .more a {
-        width: 95px;
+        width: 37px;
         line-height: 29px;
-        font-size: 13px;
+        font-size: 0px;
         background-color: #fff;
         padding: 0 0 0 12px;
     }
@@ -840,6 +841,10 @@ pc에서만 적용되는 스타일
     font-weight: 700;
     margin: 5px 0 10px 0;
 }
+.news .list ul li a h3::after {
+
+
+}
 .news .list ul li a p {
     color: rgba(255, 255, 255, 0.7);
 }
@@ -886,11 +891,12 @@ pc에서만 적용되는 스타일
 @media screen and (max-width: 640px) {
     .news {
         padding: 0 0 70px 0;
+        margin-top: 190px;
     }
     .news .tit {
         position: relative;
         top: auto;
-        float: none;
+        float: none; /* float 해제 */
         margin: 0;
         padding: 60px 0 0 0;
     }
@@ -902,15 +908,15 @@ pc에서만 적용되는 스타일
         font-size: 13px;
     }
     .news .tit br {
-        display: none;
+        display: none; /* 줄바꿈 삭제 */
     }
     .news .list {
-        margin: 0;
-        padding-top: 30px;
+        margin: 0; /* tit하고 여백 반드시 margin */
+        padding-top: 30px; /* 상단의 여백 */
         overflow-x: auto;
     }
     .news .list ul {
-        flex-wrap: wrap; /*여러줄가능*/
+        flex-wrap: nowrap; /* 한줄로 */
         width: 1328px;
     }
     .news .list ul li {
@@ -920,61 +926,43 @@ pc에서만 적용되는 스타일
     .news .list ul li:nth-child(even) {
         margin-top: 0;
     }
-    .news .list ul li a {
-        display: block;
-    }
-    .news .list ul li a span {
-        display: block;
-        overflow: hidden;
-        line-height: 0;
-        font-size: 0;
-    }
     .news .list ul li a span img {
-        width: 100%;
+        width: 100%; /* 감싸는 요소의 넓이에 딱 맞게 */
     }
     .news .list ul li a h3 {
-        font-size: 25px;
-        font-weight: 700;
-        margin: 5px 0 10px 0;
+        font-size: 15px;
+        white-space: nowrap; /*한줄만 허용하는 코드*/
+        overflow: hidden; /*영역외 나오는 글을 잘라줌*/
+        text-overflow: ellipsis; /*말 줄임표로 잘린 텍스트가 있다고 표시*/
     }
     .news .list ul li a p {
+        font-size: 13px;
         color: rgba(255, 255, 255, 0.7);
+        width: 200px;
         overflow: hidden;
-        height: 3.6em;
-        line-height: 1.2;
-    }
-    .news .inner {
-        position: relative;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
     }
     .news .more {
-        top: 90px;
+        top: 93px;
         left: auto;
         right: 0;
     }
     .news .more a {
-        width: 100px;
-        line-height: 30px;
-        font-size: 13px;
-        border: 1px solid rgba(255, 255, 255, 0.7);
-        border-radius: 50px;
-        padding: 0 0 0 13px;
+        width: 37px;
+        line-height: 29px;
+        font-size: 0;
+        padding: 0 0 0 12px;
     }
     .news .more a::after {
-        right: 12px;
-        top: 8px;
-        width: 12px;
-        height: 12px;
-
-        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 13H5V11H11V5H13V11H19V13H13V19H11V13Z' fill='%23666666'/%3E%3C/svg%3E%0A");    background-position: center center;
-        background-repeat: no-repeat;
-        background-size: 28px auto;
-        transition: 0.2s;
-    }
-    .news .more a:hover {
-        color: #FFF;
-        background-color: #7A563C;
-    }
-    .news .more a:hover::after {
+        right: -5px;
+        top: 5px;
+        width: 45px;
+        height: 18px;
+        background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8H0V6H6V0H8V6H14V8H8V14H6V8Z' fill='white'/%3E%3C/svg%3E%0A");        background-size: 19px auto;
+        background-size: 12px auto;
     }
 }
 .footer {
@@ -985,7 +973,7 @@ pc에서만 적용되는 스타일
 .footer .inner {
     display: flex;
     justify-content: space-between;
-    position: relative;
+    position: relative; /* copyright 정렬의 기준 */
 }
 .footer .footer_txt {
     font-size: 30px;
@@ -998,14 +986,58 @@ pc에서만 적용되는 스타일
     font-size: 20px;
     font-weight: 700;
 }
+.footer .footer_info span a {
+    margin: 0 10px 0 0;
+}
 .footer .footer_info span + strong {
     margin-top: 57px;
 }
 .footer .footer_info span {
     display: block;
+    margin: 11px 0 0 0;
 }
 .footer .copyright {
     position: absolute;
     left: 0;
     bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.footer .copyright {
+    width: 279px;
+}
+.footer .copyright span {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+}
+@media screen and (max-width: 640px) {
+    .footer {
+        padding: 54px 0 60px 0;
+    }
+    .footer .inner {
+        display: block;
+    }
+    .footer .footer_txt {
+        font-size: 20px;
+        margin-bottom: 49px;
+    }
+    .footer .footer_info strong {
+        font-size: 15px;
+    }
+    .footer .footer_info span + strong {
+        margin-top: 38px;
+    }
+    .footer .footer_info span {
+        margin: 5px 0 0 0;
+    }
+    .footer .footer_info span a {
+        margin: 0 10px 0 0;
+    }
+    .footer .copyright {
+        position: relative; /*absolute 해제*/
+        left: auto;
+        bottom: -28px;
+    }
 }
