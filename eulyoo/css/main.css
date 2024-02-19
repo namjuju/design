@@ -841,10 +841,6 @@ pc에서만 적용되는 스타일
     font-weight: 700;
     margin: 5px 0 10px 0;
 }
-.news .list ul li a h3::after {
-
-
-}
 .news .list ul li a p {
     color: rgba(255, 255, 255, 0.7);
 }
