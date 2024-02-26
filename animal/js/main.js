@@ -99,4 +99,41 @@ $(document).ready(function(){
         $(this).hide()
         $('.adopt .ctrl_btn .stop').show()
     })
+
+    $('.footer .family_site .site_open').on('click', function(){
+        $('.footer .family_site .site_list').slideDown()
+        $(this).hide()
+        $('.footer .family_site .site_close').show()
+    })
+    $('.footer .family_site .site_close').on('click', function(){
+        $('.footer .family_site .site_list').slideUp()
+        $(this).hide()
+        $('.footer .family_site .site_open').show()
+    })
+        /*
+        메뉴열기를 클릭하면 header에 menu_open 클래스 추가
+        메뉴닫기를 클릭하면 header에 menu_close 클래스가 삭제
+        */
+
+    $('.header .gnb .gnb_open').on('click', function(){
+        $('.header').addClass('menu_open')
+        $("html, body").css({overflow : "hidden", height : $(window).height()}).bind("scroll touchmove mousewheel", function(e){e.preventDefault();e.stopPropagation();return false;},function(){passive:false});
+    })
+    $('.header .gnb .gnb_close').on('click', function(){
+        $('.header').removeClass('menu_open')
+        $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
+    })
+
+    $(".header .gnb ul.depth1 > li:has(.depth2) > a").on("click", function(e){
+        e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
+        if($(this).parent().hasClass('sub_open') == true){//sub_open있다면
+            console.log('sub_open있음')
+            $(this).parent().removeClass('sub_open')
+            $(this).parent().find('ul.depth2').slideUp()
+        }else{
+            console.log('sub_open없음')
+            $(this).parent().addClass('sub_open')
+            $(this).parent().find('ul.depth2').slideDown()
+        }
+    });
 })
