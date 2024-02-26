@@ -365,7 +365,7 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
         left: auto;
         top: auto;
         transform: translate(0, 0);
-        padding: 33px 20px 10px 20px;
+        padding: 20px 20px 10px 20px;
         background-color: #f4f4f4;
     }
     .header .gnb ul.depth2::before {
