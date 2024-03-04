@@ -92,4 +92,11 @@ $(document).ready(function(){
         $('.header').removeClass('menu_open')
         $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
     })
+
+    $('.footer .family_site .open').on('click', function(){
+        $('.footer .family_site').addClass('on')
+    })
+    $('.footer .family_site .close').on('click', function(){
+        $('.footer .family_site').removeClass('on')
+    })
 })//$(document).ready
