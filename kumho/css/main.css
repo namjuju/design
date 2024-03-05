@@ -521,10 +521,6 @@ display: none;
     color: #3d3d3d;
     transition: 0.5s;
 }
-.service .list ul li:hover {
-    transform: translate(-10px, -10px); /* 왼쪽상단으로 이동 */
-    box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
-}
 .service .list ul li a {
     display: block;
     height: 95px;
