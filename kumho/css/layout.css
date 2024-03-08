@@ -596,7 +596,17 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     font-weight: 700;
     border-radius: 20px;
 }
-@media screen and (max-width:650px) {
+@media screen and (max-width:1024px) {
+    .lnb ul li a {
+        padding: 0 15px;
+    }
+}
+@media screen and (max-width:890px) {
+    .lnb ul li a {
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width:700px) {
     
     .sub_visual {
         height: 400px;
