@@ -26,6 +26,7 @@
 html, body {
     font-family: 'Kanit', 'GmarketSansMedium', 'GmarketSansBold', sans-serif; /* 서체 serif 명조 sans-serif 고딕 */
     font-size: 17px; /* 크기 */
+    background-color: #ede8e3;
     color: #1d1d1d; /* 글자색상 */
     font-weight: 300; /* 글자의 두께 */
     line-height: 1.2; /* auto */
