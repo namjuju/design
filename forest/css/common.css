@@ -3,15 +3,15 @@
 /* 한글웹폰트 */
 @font-face {
     font-family: 'Pretendard';
-    font-weight: 300;
+    font-weight: 400;
     font-display: swap;
-    src: local('Pretendard Light'), url(../fonts/Pretendard-Light.woff2) format('woff2'), url(../fonts/Pretendard-Light.woff) format('woff');
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
 }
 @font-face {
     font-family: 'Pretendard';
-    font-weight: 900;
+    font-weight: 700;
     font-display: swap;
-    src: local('Pretendard Black'), url(../fonts/Pretendard-Black.woff2) format('woff2'), url(../fonts/Pretendard-Black.woff) format('woff');
+    src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
 }
 *::selection {
     background-color: #1d1d1d;
@@ -43,7 +43,6 @@ html, body {
 @media screen and (max-width:1320px){
     .wrapper { 
         width: auto; 
-        margin: 0 20px;  
     }
 }/*media*/
 @media screen and (max-width:1024px){
