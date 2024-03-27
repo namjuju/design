@@ -1,0 +1,138 @@
+@import url(default.css);
+@import url(common.css);
+@import url(layout.css);
+
+.visual .swiper{
+    height: 850px;
+}
+.visual .swiper-slide img { 
+    display:block; 
+    width:100%; 
+    height:100%; 
+    object-fit:cover; 
+}
+.visual ul li.swiper-slide-active img {
+    animation-name: visual_img;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes visual_img {
+    0% { transform: scale3d(1.1, 1.1, 1);}
+    100% { transform: scale3d(1, 1, 1);}
+}
+.visual ul li.swiper-slide-active .visual_txt h2,
+.visual ul li.swiper-slide-active .visual_txt p {
+    animation-name: visual_txt;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+.visual ul li.swiper-slide-active .visual_txt p {
+    animation-delay: 0.3s;
+}
+@keyframes visual_txt {
+    0% {transform: translate(0, 50px); opacity: 0;}
+    100% {transform: translate(0, 0); opacity: 1;}
+}
+.visual .visual_txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+.visual .visual_txt.txt01 h2,
+.visual .visual_txt.txt02 h2 {
+    font-size: 70px;
+    font-weight: 700;
+}
+.visual .visual_txt p {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.visual .visual_txt.txt03 h2 {
+    font-size: 43px;
+}
+.visual .visual_txt.txt03 h2 strong {
+    font-weight: 700;
+}
+.visual .ctrl {
+    position: absolute;
+    right: 15%;
+    bottom: 70px;
+    width: 767px;
+    z-index: 10;
+    display: flex;
+}
+.visual .ctrl .paging {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.visual .ctrl .paging strong {
+    position: relative;
+    width: 230px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+    opacity: 1;
+    margin-right: 10px;
+}
+.visual .ctrl .paging strong::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    content: "";
+}
+.visual .paging > strong > span {
+    position: absolute;
+    left: 0;
+    top: -27px;
+    color: #fff;
+}
+.visual .ctrl .paging strong.swiper-pagination-bullet-active::before {
+    animation-name: paging_ani;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.visual .paging strong.swiper-pagination-bullet-active > span {
+    font-weight: 700;
+}
+@keyframes paging_ani { /* 애니메이션을 효과를 미리 설정함 */
+	0% { width: 0; } 
+	100% { width: 100%; }
+}
+.visual .paging .page1 span::before {
+    content: "Woojin Traffic"
+}
+.visual .paging .page2 span::before {
+    content: "노동자자주관리기업"
+}
+.visual .paging .page3 span::before {
+    content: "우진교통"
+}
+
+.visual .ctrl button {
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    line-height: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.visual .ctrl button.stop {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cpath id='pause_circle_FILL0_wght400_GRAD0_opsz24' d='M92.6-854.8h3.6v-14.4H92.6Zm7.2,0h3.6v-14.4H99.8ZM98-844a17.528,17.528,0,0,1-7.02-1.417,18.179,18.179,0,0,1-5.715-3.848,18.178,18.178,0,0,1-3.848-5.715A17.528,17.528,0,0,1,80-862a17.528,17.528,0,0,1,1.417-7.02,18.177,18.177,0,0,1,3.848-5.715,18.177,18.177,0,0,1,5.715-3.848A17.527,17.527,0,0,1,98-880a17.527,17.527,0,0,1,7.02,1.417,18.177,18.177,0,0,1,5.715,3.848,18.177,18.177,0,0,1,3.847,5.715A17.528,17.528,0,0,1,116-862a17.528,17.528,0,0,1-1.418,7.02,18.178,18.178,0,0,1-3.847,5.715,18.179,18.179,0,0,1-5.715,3.848A17.528,17.528,0,0,1,98-844Zm0-3.6a13.9,13.9,0,0,0,10.215-4.185A13.9,13.9,0,0,0,112.4-862a13.9,13.9,0,0,0-4.185-10.215A13.9,13.9,0,0,0,98-876.4a13.9,13.9,0,0,0-10.215,4.185A13.9,13.9,0,0,0,83.6-862a13.9,13.9,0,0,0,4.185,10.215A13.9,13.9,0,0,0,98-847.6ZM98-862Z' transform='translate(-80 880)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+.visual .ctrl button.play {
+    display: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cpath id='play_circle_FILL0_wght400_GRAD0_opsz24' d='M93.5-853.9l12.6-8.1-12.6-8.1ZM98-844a17.527,17.527,0,0,1-7.02-1.417,18.177,18.177,0,0,1-5.715-3.847,18.178,18.178,0,0,1-3.848-5.715A17.527,17.527,0,0,1,80-862a17.528,17.528,0,0,1,1.417-7.02,18.177,18.177,0,0,1,3.848-5.715,18.178,18.178,0,0,1,5.715-3.848A17.528,17.528,0,0,1,98-880a17.528,17.528,0,0,1,7.02,1.417,18.178,18.178,0,0,1,5.715,3.848,18.177,18.177,0,0,1,3.847,5.715A17.528,17.528,0,0,1,116-862a17.527,17.527,0,0,1-1.418,7.02,18.178,18.178,0,0,1-3.847,5.715,18.177,18.177,0,0,1-5.715,3.847A17.527,17.527,0,0,1,98-844Zm0-3.6a13.9,13.9,0,0,0,10.215-4.185A13.9,13.9,0,0,0,112.4-862a13.9,13.9,0,0,0-4.185-10.215A13.9,13.9,0,0,0,98-876.4a13.9,13.9,0,0,0-10.215,4.185A13.9,13.9,0,0,0,83.6-862a13.9,13.9,0,0,0,4.185,10.215A13.9,13.9,0,0,0,98-847.6ZM98-862Z' transform='translate(-80 880)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
