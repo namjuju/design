@@ -30,7 +30,7 @@
 html, body {
     /* 만약에 내가 정의한 웹폰트가 적용안되면, 맑은고딕(window용) 또는 애플고딕(맥용) 사용 */
     font-family: 'Pretendard', 'Malgun Gothic', '맑은 고딕', 'Dotum', '돋움', 'Apple SD Gothic Neo', '애플 SD 산돌고딕 Neo', sans-serif;
-    font-size: 17px; /* 크기 */
+    font-size: 15px; /* 크기 */
     color: #333; /* 글자색상 */
     font-weight: 400; /* 글자의 두께 */
     line-height: 1.2; /* auto */
@@ -40,6 +40,7 @@ html, body {
 .wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
     width: 1280px; /* 홈페이지 넓이 */
     margin: 0 auto;  /* 가운데 정렬 */
+    overflow: hidden;
 }
 #wrap { /* id="wrap"에 적용되는 스타일 */
     width: 100%;
@@ -53,12 +54,12 @@ html, body {
 }/*media*/
 @media screen and (max-width:1024px){
     html, body {
-        font-size: 15px;
+        font-size: 13px;
     }
 }/*media*/
 @media screen and (max-width:768px){
     html, body {
-        font-size: 13px;
+        font-size: 11px;
     }
 }
 

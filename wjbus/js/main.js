@@ -25,4 +25,31 @@ $(document).ready(function(){
         $('.visual .ctrl button.stop').show()
         visual_swiper.autoplay.start();  /* 재생 기능 */
     })
+
+    $('.work .inner .work_tit ul li').on('mouseenter', function(){
+        $('.work .inner .work_tit ul li').removeClass('on')
+        $(this).addClass('on')
+    })
+
+    const swiper = new Swiper('.news .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: "4", /* li의 넓이 비율로 안함 - css에서 준 넓이대로 함 */
+	spaceBetween: 16, /* li와 li사이 - 제일 작은 여백 */
+
+        navigation: {
+            nextEl: '.news .next',
+            prevEl: '.news .prev',
+        },
+        scrollbar: {
+            el: ".swiper-scrollbar",
+            hide: true,
+        },
+
+    });
+
+
+    $('.quick .quick_btn ul li').on('mouseenter', function(){
+        $('.quick .quick_btn ul li').removeClass('active')
+        $(this).addClass('active')
+    })
+
 })//$(document).ready

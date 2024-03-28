@@ -43,4 +43,10 @@ $(document).ready(function(){
             $('header .gnb ul.depth1 > li').removeClass('on')
         }
     })
+    $('header .tnb .join').on('focusin', function(){
+        if(device_status == 'pc'){
+            $('header').removeClass('menu_over')
+            $('header .gnb ul.depth1 > li').removeClass('on')
+        }
+    })
 })
