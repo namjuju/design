@@ -12,12 +12,6 @@
     font-display: swap;
     src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
 }
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 900;
-    font-display: swap;
-    src: local('Pretendard Black'), url(../fonts/Pretendard-Black.woff2) format('woff2'), url(../fonts/Pretendard-Black.woff) format('woff');
-}
 
 *::selection {
     background-color: #333;
@@ -50,6 +44,7 @@ html, body {
 @media screen and (max-width:1320px){
     .wrapper { 
         width: auto; 
+        margin: 0 20px;  
     }
 }/*media*/
 @media screen and (max-width:1024px){

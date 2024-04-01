@@ -49,4 +49,20 @@ $(document).ready(function(){
             $('header .gnb ul.depth1 > li').removeClass('on')
         }
     })
+
+    $("header .gnb ul.depth1 > li > a").on("click", function(e){
+        if(device_status == 'mobile'){
+            $('header .gnb ul.depth1 > li').removeClass('on') // 2차메뉴를 다 열 수 없고 하나만 열수있다
+            $(this).parent().toggleClass('on')
+        }
+	});
+
+    $('header .gnb .gnb_open').on('click', function(){
+        $('header').addClass('menu_open')
+        $("html, body").css({overflow : "hidden", height : $(window).height()}).bind("scroll touchmove mousewheel", function(e){e.preventDefault();e.stopPropagation();return false;},function(){passive:false});
+    })
+    $('header .gnb .gnb_close').on('click', function(){
+        $('header').removeClass('menu_open')
+        $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
+    })
 })

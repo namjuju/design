@@ -34,7 +34,23 @@ $(document).ready(function(){
     const swiper = new Swiper('.news .swiper', { /* 팝업을 감싼는 요소의 class명 */
 	slidesPerView: "4", /* li의 넓이 비율로 안함 - css에서 준 넓이대로 함 */
 	spaceBetween: 16, /* li와 li사이 - 제일 작은 여백 */
-
+	breakpoints: {
+        320: {  /* 640px 이상이 되면 적용 */
+            slidesPerView: "1"
+        },
+        375: {  /* 640px 이상이 되면 적용 */
+            slidesPerView: "1.2"
+        },
+        500: {  /* 640px 이상이 되면 적용 */
+            slidesPerView: "2"
+        },
+		768: {  /* 640px 이상이 되면 적용 */
+            slidesPerView: "3"
+		},
+		1024: {  /* 1024px 이상이 되면 적용 */
+            slidesPerView: "4"
+		},
+	},
         navigation: {
             nextEl: '.news .next',
             prevEl: '.news .prev',
