@@ -363,6 +363,9 @@ footer .f_bottom ul li::before {
     background-color: #ccc;
     content: "";
 }
+footer .f_bottom ul li:last-child:before {
+    display: none;
+}
 footer .f_bottom ul li.bold {
     font-weight: 700;
 }
@@ -370,9 +373,34 @@ footer .f_bottom ul li.bold {
 @media screen and (max-width:768px){
     footer {
         height: 354px;
+        
     }
     footer .f_top {
         margin-top: 123px;
         padding-bottom: 45px;
+    }
+}
+@media screen and (max-width:375px){
+    footer {
+        height: 440px;
+        line-height: 25px;
+    }
+    footer .f_top {
+        margin-top: 123px;
+        padding-bottom: 45px;
+    }
+    footer .f_bottom {
+        display: block;
+        margin-top: 30px;
+    }
+    footer .f_bottom ul li {
+        margin-left: 10px;
+    }
+    footer .f_bottom ul li:first-child {
+        margin-left: 0;
+    }
+    footer .f_bottom ul li::before {
+        right: -6px;
+        top: 12px;
     }
 }

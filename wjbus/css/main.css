@@ -1276,13 +1276,13 @@
         height: 100px;
     }
     .intranet::after {
-        top: 138%;
-        right: 3%;
+        top: 119%;
+        right: 5%;
         width: 30px;
         height: 20px;
     }
     .intranet .txt {
-        margin-top: 127px;
+        margin-top: 106px;
     }
     .intranet .txt span {
         font-size: 20px;
