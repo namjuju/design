@@ -277,11 +277,13 @@
 .system ul li {
     transition: 0.3s;
 }
-.system ul li:hover {
-    transform: translate(-5px, -5px);
-}
-.system ul li:hover a {
-    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.15);
+@media screen and (min-width:1025px) {
+    .system ul li:hover {
+        transform: translate(-5px, -5px);
+    }
+    .system ul li:hover a {
+        box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.15);
+    }
 }
 .system ul li.sys01 a {
     background-color: #46B035;
@@ -986,7 +988,7 @@
         font-size: 40px;
     }
     .news .news_btn {
-        top: 120px;
+        top: 95px;
     }
     .news ul li a {
         padding: 30px;
@@ -1023,7 +1025,7 @@
         margin-bottom: 15px;
     }
     .news .news_btn {
-        top: 80px;
+        top: 65px;
     }
     .news ul li a em {
         font-size: 13px;
@@ -1043,7 +1045,7 @@
 }
 
 .quick {
-    height: 430px;
+    height: 465px;
 }
 .quick .quick_tit {
     margin: 100px 0 41px 0;
@@ -1185,7 +1187,7 @@
 }
 .intranet::before {
     position: absolute;
-    bottom: -100px;
+    bottom: -80px;
     right: 50%;
     z-index: 10;
     background-color: #46B035;
@@ -1239,7 +1241,7 @@
         height: 130px;
     }
     .intranet .txt {
-        margin-top: 130px;
+        margin-top: 105px;
     }
     .intranet .txt span {
         font-size: 30px;
@@ -1250,7 +1252,7 @@
 }
 @media screen and (max-width:768px) {
     .intranet {
-        height: 117px;
+        height: 100px;
     }
     .intranet::before {
         right: auto;
