@@ -246,7 +246,7 @@
 }
 
 .system {
-    margin: 88px 0 98px 0;
+    margin: 100px 0 98px 0;
 }
 .system strong {
     font-size: 23px;
@@ -361,7 +361,7 @@
 
 @media screen and (max-width:1280px) {
     .system {
-        margin: 65px 0 80px 0;
+        margin: 77px 0 80px 0;
     }
     .system strong {
         font-size: 20px;
@@ -847,7 +847,8 @@
     right: 0;
 
 }
-.swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+.swiper-horizontal>.swiper-scrollbar, 
+.swiper-scrollbar.swiper-scrollbar-horizontal {
     position: absolute;
     left: 1%;
     bottom: 3px;
@@ -881,18 +882,9 @@
     height: 309px;
     transition: 0.3s;
 }
-.news ul li:last-child {
-    background-color: #444;
-}
-.news ul li:last-child > a > span {
-    font-size: 30px;
-    text-align: center;
-    margin-top: 100px;
-    color: #fff;
-}
 .news ul li a {
     display: block;
-    padding: 20px;
+    padding: 35px;
 }
 .news ul li a span {
     font-size: 20px;
@@ -917,21 +909,39 @@
     display: block;
     font-size: 15px;
     color: #555;
-    margin-top: 50px;
+    margin-top: 35px;
+    position: relative;
 }
-.news ul li a i {
-    display: block;
-}
-.news ul li a i.news_more::after {
+.news ul li a em::after {
     position: absolute;
-    right: 22px;
-    bottom: 29px;
+    right: 0;
+    bottom: 0;
     width: 19px;
     height: 14px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22.018' height='15.413' viewBox='0 0 22.018 15.413'%3E%3Cpath id='east_FILL0_wght400_GRAD0_opsz24' d='M94.312-744.587l-1.569-1.541,5.064-5.064H80v-2.2H97.807l-5.037-5.064L94.312-760l7.706,7.706Z' transform='translate(-80 760)'/%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
+    content: "";
+}
+.news ul li:last-child {
+    border-radius: 5%;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.news ul li:last-child > a > span {
+    font-size: 1.7rem;
+    text-align: center;
+    position: relative;
+    padding-top: 135px;
+}
+.news ul li:last-child > a > span::after {
+    position: absolute;
+    top: 31%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background: url(../images/main/add.svg) no-repeat center center / contain;
+    opacity: 0.8;
     content: "";
 }
 /*마우스오버*/
@@ -947,13 +957,24 @@
 .news ul li:hover:last-child span {
     color: #1d1d1d;
 }
+.news ul li:last-child:hover > a > span::after {
+    animation-name: news_ani;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes news_ani { /* 애니메이션을 효과를 미리 설정함 */
+	0% { transform: rotate(0deg); } 
+	100% { transform: rotate(360deg); }
+}
 
 @media screen and (max-width:1280px) {
     .news {
         height: 630px;
     }
     .news .news_tit {
-        margin: 77px 0 19px 0;
+        margin: 77px 0 19px 10px;
     }
     .news .news_tit strong {
         font-size: 20px;
@@ -964,6 +985,10 @@
     .news .news_btn {
         top: 120px;
     }
+    .news ul li a {
+        padding: 30px;
+    }
+
 }
 @media screen and (max-width:1024px) {
     .news {
@@ -975,10 +1000,14 @@
     .news .news_tit h2 {
         font-size: 35px;
     }
+
 }
 @media screen and (max-width:768px) {
     .news {
         height: 580px;
+    }
+    .news ul li {
+        height: 288px;
     }
     .news .news_tit {
         margin: 58px 0 19px 0;
@@ -992,6 +1021,10 @@
     .news .news_btn {
         top: 80px;
     }
+    .news ul li a em {
+        font-size: 13px;
+    }
+
 }
 @media screen and (max-width:375px) {
     .news {
@@ -1006,10 +1039,10 @@
 }
 
 .quick {
-    height: 600px;
+    height: 430px;
 }
 .quick .quick_tit {
-    margin: 83px 0 41px 0;
+    margin: 100px 0 41px 0;
 }
 .quick .quick_tit strong {
     font-size: 23px;
@@ -1031,21 +1064,24 @@
 .quick .quick_btn ul li {
     width: calc(33.33% - 8px);
     height: 212px;
-    background-color: #F3F3F3;
+    background-color: #e8e8e8;
     transition: 0.3s;
 }
 .quick .quick_btn ul li a {
     display: block;
     width: 100%;
-    height: 212px;
+    height: 100%;
     font-weight: 700
 }
 .quick .quick_btn ul li a span {
     display: inline-block;
     font-size: 30px;
     color: #1d1d1d;
-    margin: 70px 0 20px 0;
+    margin: 70px 5px 20px 5px;
     transition: 0.3s;
+}
+.quick .quick_btn ul li p {
+    font-size: 18px;
 }
 
 /*마우스오버*/
@@ -1082,10 +1118,16 @@
     .quick .quick_tit h2 {
         font-size: 35px;
     }
+    .quick .quick_btn ul li a span {
+        font-size: 25px;
+    }
+    .quick .quick_btn ul li p {
+        font-size: 15px;
+    }
 }
 @media screen and (max-width:768px) {
     .quick {
-        height: 500px;
+        height: 377px;
     }
     .quick .quick_tit {
         margin: 58px 0 33px 0;
@@ -1096,7 +1138,24 @@
     .quick .quick_tit h2 {
         font-size: 30px;
     }
+    .quick .quick_btn ul li {
+        height: 100px;
 
+    }
+    .quick .quick_btn ul li a span {
+        font-size: 20px;
+        margin: 39px 5px 20px 5px;
+    }
+    .quick .quick_btn ul li p {
+        display: none;
+    }
+
+}
+@media screen and (max-width:500px) {
+
+    .quick .quick_btn ul li a span {
+        font-size: 15px;
+    }
 }
 @media screen and (max-width:375px) {
     .quick .quick_tit strong {
@@ -1105,32 +1164,124 @@
     .quick .quick_tit h2 {
         font-size: 18px;
     }
+    .quick .quick_btn ul li {
+        height: 100px;
+        border-radius: 0;
+        width: 100px;
+    }
+    .quick .quick_btn ul li a span {
+        font-size: 13px;
+    }
 }
 
 .intranet {
     position: relative;
+    height: 142px;
 }
-.intranet .inner {
+.intranet::before {
     position: absolute;
     bottom: -100px;
-    left: 0;
-    z-index: 101;
+    right: 50%;
+    z-index: 10;
     background-color: #46B035;
-    width: 600px;
-    height: 142px;
+    width: 50%;
+    height: 100%;
     content: "";
+}
+.intranet .txt {
     color: #FFF;
-    padding: 38px 0;
+    line-height: 1.4;
+    position: relative;
+    z-index: 11;
+    margin-top: 127px;
 }
-.intranet .inner .txt {
-    margin-left: 17%;
-}
-.intranet .inner span {
+.intranet .txt span {
     font-size: 40px;
     font-weight: 700;
 }
-.intranet .inner p {
+.intranet::after {
+    position: absolute;
+    top: 108%;
+    right: 52%;
+    width: 50px;
+    height: 40px;
+    z-index: 11;
+    background-position: center center;
+    background-repeat: no-repeat ;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28.368' height='19.858' viewBox='0 0 28.368 19.858'%3E%3Cpath id='east_FILL0_wght400_GRAD0_opsz24' d='M98.439-740.142l-2.021-1.986,6.525-6.525H80v-2.837h22.943l-6.489-6.525L98.439-760l9.929,9.929Z' transform='translate(-80 760)' fill='%23fff'/%3E%3C/svg%3E%0A");
+    content: "";
+}
+.intranet .txt p {
     font-size: 17px;
 }
-
+@media screen and (max-width:1280px) {
+    .intranet {
+        height: 140px;
+    }
+    .intranet .txt {
+        margin-top: 128px;
+    }
+    .intranet .txt span {
+        font-size: 35px;
+    }
+    .intranet .txt p {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width:1024px) {
+    .intranet {
+        height: 130px;
+    }
+    .intranet .txt {
+        margin-top: 130px;
+    }
+    .intranet .txt span {
+        font-size: 30px;
+    }
+    .intranet .txt p {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width:768px) {
+    .intranet {
+        height: 117px;
+    }
+    .intranet::before {
+        right: auto;
+        width: 100%;
+    }
+    .intranet::after {
+        top: 122%;
+        right: 3%;
+        width: 35px;
+        height: 30px;
+    }
+    .intranet .txt span {
+        font-size: 25px;
+    }
+    .intranet .txt p {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width:450px) {
+    .intranet {
+        height: 100px;
+    }
+    .intranet::after {
+        top: 138%;
+        right: 3%;
+        width: 30px;
+        height: 20px;
+    }
+    .intranet .txt {
+        margin-top: 127px;
+    }
+    .intranet .txt span {
+        font-size: 20px;
+    }
+    .intranet .txt p {
+        font-size: 15px;
+    }
+}
 

@@ -49,12 +49,12 @@ html, body {
 }/*media*/
 @media screen and (max-width:1024px){
     html, body {
-        font-size: 13px;
+        font-size: 15px;
     }
 }/*media*/
 @media screen and (max-width:768px){
     html, body {
-        font-size: 11px;
+        font-size: 13px;
     }
 }
 
