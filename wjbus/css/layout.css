@@ -330,11 +330,11 @@ footer {
     height: 444px;
     background-color: #1d1d1d;
     color: #FFF;
-    line-height: 30px;
+    line-height: 1.7;
 }
 footer .f_top {
     margin-top: 160px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     padding-bottom: 57px;
 }
 footer .f_top ul li span {
@@ -372,22 +372,11 @@ footer .f_bottom ul li.bold {
 
 @media screen and (max-width:768px){
     footer {
-        height: 354px;
-        
+        height: 354px;        
     }
     footer .f_top {
         margin-top: 123px;
-        padding-bottom: 45px;
-    }
-}
-@media screen and (max-width:375px){
-    footer {
-        height: 440px;
-        line-height: 25px;
-    }
-    footer .f_top {
-        margin-top: 123px;
-        padding-bottom: 45px;
+        padding-bottom: 30px;
     }
     footer .f_bottom {
         display: block;
@@ -403,4 +392,13 @@ footer .f_bottom ul li.bold {
         right: -6px;
         top: 12px;
     }
+}
+@media screen and (max-width:375px){
+    footer {
+        line-height: 1.4;
+    }
+    footer .f_top {
+        margin-top: 111px;
+    }
+
 }

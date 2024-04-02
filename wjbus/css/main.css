@@ -1034,13 +1034,20 @@
 }
 @media screen and (max-width:375px) {
     .news {
-        height: 550px;
+        height: 500px;
     }
     .news .news_tit strong {
         font-size: 13px;
     }
     .news .news_tit h2 {
         font-size: 18px;
+    }
+    .news .news_btn {
+        top: 59px;
+    }
+    .news .news_btn button {
+        width: 23px;
+        height: 23px;
     }
 }
 
@@ -1085,7 +1092,7 @@
     font-size: 30px;
     color: #1d1d1d;
     margin: 70px 5px 20px 5px;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 .quick .quick_btn ul li p {
     font-size: 18px;
@@ -1290,5 +1297,26 @@
     .intranet .txt p {
         font-size: 15px;
     }
+}
+@media screen and (max-width:375px)  {
+    .intranet {
+        height: 80px;
+    }
+    .intranet::before {
+        bottom: -70px;
+    }
+    .intranet .txt {
+        margin-top: 87px;
+    }
+    .intranet::after {
+        top: 123%;
+        right: 5%;
+        width: 27px;
+        height: 18px;
+    }
+    .intranet .txt p {
+        font-size: 13px;
+    }
+
 }
 
