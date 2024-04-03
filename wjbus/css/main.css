@@ -262,10 +262,11 @@
 }
 .system ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .system ul li a {
     display: block;
+    width: 400px;
     height: 293px;
     color: #fff;
     border-radius: 20px;
@@ -276,6 +277,7 @@
 }
 .system ul li {
     transition: 0.3s;
+    width: 100%;
 }
 @media screen and (min-width:1025px) {
     .system ul li:hover {
@@ -375,6 +377,7 @@
         margin-bottom: 30px;
     }
     .system ul li a {
+        width: auto;
         height: 237px;
         padding: 35px;
         margin: 5px;
