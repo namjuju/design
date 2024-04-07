@@ -8,4 +8,149 @@
     작성일 : 2024.04.05
     설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다)
 */
+.visual {
+    height: 880px;
+    margin: 0 5%;
+}
+.visual .visual_top  {
+    height: 300px;
+}
+.visual .visual_top .v_txt {
+    float: left;
+    margin-top: 70px;
+}
+.visual .visual_top .v_txt h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.visual .visual_top .v_txt p {
+    font-size: 23px;
+    color: #666;
+}
+.visual .visual_top .v_txt p span {
+    color: #579BD9;
+    font-weight: 500;
+}
 
+.visual .visual_top .search_box {
+    float: right;
+    margin-top: 100px;
+}
+.visual .visual_top .search_box .searchbar .search {
+    max-width: 520px;
+    width: 100%;
+    height: 79px;
+    border: 2px solid #A3B0D1;
+    border-radius: 45px;
+    margin: 0 auto; /* 넓이가 있는 block 요소를 가운데 정렬*/
+    padding: 0 10px 0 41px;
+    display: flex;
+    align-items: center; /*위아래가운데*/
+}
+.visual .visual_top .search_box .searchbar .search:hover {
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
+}
+.visual .visual_top .search_box .searchbar .search label {
+    display: none;
+}
+.visual .visual_top .search_box .searchbar .search input[type="text"] {
+    font-size: 23px;
+    font-weight: 700;
+    color: #333;
+    width: calc(100% - 100px);
+    border: 0;
+    outline: 0;
+}
+.visual .visual_top .search_box .searchbar .search input[type="text"]::placeholder {
+    font-weight: 400;
+    color: #999;
+
+}
+.visual .visual_top .search_box .searchbar .search input[type="submit"] {
+    border: 0;
+    background-color: transparent;
+    font-size: 0;
+    line-height: 0;
+    width: 56px;
+    height: 56px;
+    background-image: url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M56 28C56 43.464 43.464 56 28 56C12.536 56 0 43.464 0 28C0 12.536 12.536 0 28 0C43.464 0 56 12.536 56 28Z' fill='url(%23paint0_linear_111_8)' fill-opacity='0.5'/%3E%3Cpath d='M25.6511 36.8246C22.3948 36.8246 19.6388 35.72 17.3833 33.5107C15.1278 31.3014 14 28.6019 14 25.4123C14 22.2227 15.1278 19.5233 17.3833 17.314C19.6388 15.1047 22.3948 14 25.6511 14C28.9074 14 31.6634 15.1047 33.9189 17.314C36.1744 19.5233 37.3022 22.2227 37.3022 25.4123C37.3022 26.6999 37.0931 27.9142 36.6748 29.0555C36.2566 30.1967 35.689 31.2063 34.972 32.0841L41.5071 39.0591C41.8357 39.381 42 39.7907 42 40.2882C42 40.7856 41.8357 41.1953 41.5071 41.5172C41.1784 41.8391 40.7602 42 40.2523 42C39.7445 42 39.3262 41.8391 38.9976 41.5172L32.4625 34.5422C31.5663 35.2445 30.5356 35.8004 29.3705 36.2101C28.2054 36.6198 26.9656 36.8246 25.6511 36.8246ZM25.6511 33.3131C27.8917 33.3131 29.7962 32.545 31.3646 31.0087C32.933 29.4725 33.7173 27.607 33.7173 25.4123C33.7173 23.2176 32.933 21.3522 31.3646 19.8159C29.7962 18.2796 27.8917 17.5115 25.6511 17.5115C23.4105 17.5115 21.506 18.2796 19.9376 19.8159C18.3692 21.3522 17.585 23.2176 17.585 25.4123C17.585 27.607 18.3692 29.4725 19.9376 31.0087C21.506 32.545 23.4105 33.3131 25.6511 33.3131Z' fill='white'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_111_8' x1='26.6451' y1='1.80645' x2='26.6451' y2='57.8065' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23D3A1E4'/%3E%3Cstop offset='1' stop-color='%23678AE1'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 44px;
+}
+.searchtag {
+    display: flex;
+    margin: 19px 0 0 37px;
+}
+.searchtag .s_tit {
+    margin-right: 37px;
+}
+.searchtag .s_tit span {
+    position: relative;
+    font-weight: 700;
+    color: #A3B0D1;
+}
+.searchtag .s_tit span::after {
+    position: absolute;
+    top: 8px;
+    right: -27px;
+    width: 13px;
+    height: 2px;
+    background-color: #A3B0D1;
+    content: "";
+}
+.searchtag .s_tag ul {
+    display: flex;
+}
+
+.searchtag .s_tag ul li a {
+    display: block;
+    font-size: 15PX;
+    color: #999;
+    padding: 0 8px ;
+}
+.layout {
+    display: flex;
+    justify-content: space-between;
+}
+.layout .swiper {
+    height: 451px;
+    min-width: 844px;
+    border-radius: 30px;
+}
+.layout .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.layout .popup1 a {
+    display: block;
+    height: 100%;
+    width: 408px;
+    background-color: #D9E8FF;
+    margin-left: 28px;
+}
+.layout .popup1 a span {
+    font-size: 20px;
+    font-weight: 500;
+    color: #5B87F5;
+}
+.layout .popup1 a h3 {
+    font-size: 25px;
+}
+.layout .popup2 a {
+    display: block;
+    height: 100%;
+    width: 408px;
+    background-color: #E1F6EF;
+    margin-left: 28px;
+}
+.layout .popup2 a span {
+    font-size: 20px;
+    font-weight: 500;
+    color: #018657;
+}
+.layout .popup2 a h3 {
+    font-size: 25px;
+}
