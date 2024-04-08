@@ -659,30 +659,93 @@
 
 .list {
     margin-top: 100px;
-    background-color: #E5F9F2;
     padding-bottom: 105px;
+    position: relative;
+}
+.list::before {
+    position: absolute;
+    right: calc(50% - 697px);
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 456px;
+    content: "";
+    background-color: #E5F9F2;
+    border-radius: 0 230px 230px 0;
 }
 .list h2 {
     font-size: 33px;
     font-weight: 700;
+    padding-top: 77px;
+    position: absolute;
 }
 .list .list_wrap {
+    position: relative; /* detail정렬의 기준 */
     height: 663px; 
 }
 .list ul {
     display: flex;
-    justify-content: center
+    padding-top: 77px;
 }
-.list > ul > li > button {
+.list .list_wrap > ul > li:first-child {
+    padding-left: 250px;
+}
+.list .list_wrap > ul > li > button {
     padding: 12px 37px;
     font-size: 23px;
 }
-.list > ul > li.active > button {
+.list .list_wrap > ul > li.active > button {
     color: #23A376;
 }
-.list > ul > li .detail {
+.list .list_wrap > ul > li .detail {
+    position: absolute; /* list기준으로 정렬 */
+    left: 0;
+    top: 98px; /*tab 버튼에서 부터 측정*/
+    width: 100%;
     display: none;
 }
-.list > ul > li.active .detail {
+.list .list_wrap > ul > li.active .detail {
     display: block;
+}
+.list .list_wrap > ul > li .detail ul {
+    display: flex;
+    justify-content: space-between;
+}
+.list .list_wrap > ul > li .detail ul li {
+    width: calc(20% - 88px);
+
+}
+.list .list_wrap > ul > li .detail ul li a {
+    display: block;
+    background-color: #fff;
+    border-radius: 90%;
+    width: 110px;
+    height: 110px;
+    padding-left: 15px;
+    padding-top: 19px;
+}
+.list .list_wrap > ul > li .detail ul li a img {
+    display: block;
+    height: 77px;
+    overflow: hidden;
+}
+.list .list_wrap> ul > li .detail ul li a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.list .list_wrap > ul > li .detail ul li a:hover img {
+    transform: rotate(360deg);
+}
+
+
+
+
+
+
+@media screen and (max-width:1390px) {
+    .list::before {
+        right: 0;
+    }
 }

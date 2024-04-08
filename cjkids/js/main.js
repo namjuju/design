@@ -67,4 +67,9 @@ $('.visual .ctrl_btn button.play').on('click', function(){
     $('.visual .visual_btn .ctrl_btn button.stop').show()
     visual_swiper.autoplay.start();  /* 재생 기능 */
 })
+
+    $('.list .list_wrap > ul > li').on('click', function(){
+        $('.list .list_wrap > ul > li').removeClass('active')
+        $(this).addClass('active')
+    })
 })
