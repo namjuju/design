@@ -63,10 +63,6 @@ display: none;
     background-size: 8px auto;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7.861 13.252'%3E%3Cpath id='chevron_left_FILL0_wght300_GRAD0_opsz24' d='M340.473-692.9l-6.626-6.626,6.626-6.626,1.235,1.235-5.391,5.391,5.391,5.391Z' transform='translate(-333.847 706.153)' fill='%23fff'/%3E%3C/svg%3E%0A");
 }
-.visual .btn_ctrl button.next {
-    background-size: 8px auto;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7.861 13.252'%3E%3Cpath id='chevron_left_FILL0_wght300_GRAD0_opsz24' d='M340.473-692.9l-6.626-6.626,6.626-6.626,1.235,1.235-5.391,5.391,5.391,5.391Z' transform='translate(341.708 -692.901) rotate(180)' fill='%23fff'/%3E%3C/svg%3E%0A");
-}
 .visual .btn_ctrl button.stop {
     background-size: 7px auto;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 12'%3E%3Cg id='그룹_8' data-name='그룹 8' transform='translate(-392.5 -290.374)'%3E%3Cline id='선_17' data-name='선 17' y2='12' transform='translate(393.5 290.374)' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cline id='선_18' data-name='선 18' y2='12' transform='translate(400.5 290.374)' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E%0A");
@@ -75,6 +71,10 @@ display: none;
     display: none;
     background-size: 9px auto;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 11'%3E%3Cg id='다각형_1' data-name='다각형 1' transform='translate(9) rotate(90)' fill='none'%3E%3Cpath d='M5.5,0,11,9H0Z' stroke='none'/%3E%3Cpath d='M 5.5 1.917726516723633 L 1.783055305480957 8 L 9.216944694519043 8 L 5.5 1.917726516723633 M 5.5 0 L 11 9 L 0 9 L 5.5 0 Z' stroke='none' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.visual .btn_ctrl button.next {
+    background-size: 8px auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7.861 13.252'%3E%3Cpath id='chevron_left_FILL0_wght300_GRAD0_opsz24' d='M340.473-692.9l-6.626-6.626,6.626-6.626,1.235,1.235-5.391,5.391,5.391,5.391Z' transform='translate(341.708 -692.901) rotate(180)' fill='%23fff'/%3E%3C/svg%3E%0A");
 }
 @media screen and (max-width:1320px){
     .visual .visual_txt {
