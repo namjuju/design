@@ -99,4 +99,18 @@ $(document).ready(function(){
 
     $('.schedule .calendar .today h3').text(today)
 
+    const swiper = new Swiper('.data .swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 0,
+
+	loop: true,
+
+	navigation: {
+		nextEl: '.data .next',
+		prevEl: '.data .prev',  
+	},
+
+});
+	
+
 })
