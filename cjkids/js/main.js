@@ -76,14 +76,6 @@ $(document).ready(function(){
         $('.notice .notice_wrap > ul > li').removeClass('active')
         $(this).addClass('active')
     })
-    $('.notice .notice_wrap > ul > li > .detail > ul > li').on('mouseenter focusin', function(){
-        $('.notice .notice_wrap > ul > li > .detail > ul > li').removeClass('on')
-        $(this).addClass('on')
-    })
-    $('.notice .notice_wrap > ul > li > .detail > ul > li').on('mouseleave', function(){
-        $('.notice .notice_wrap > ul > li > .detail > ul > li').removeClass('on')
-        $(this).addClass('on')
-    })
     AOS.init({
         offset: 50, // 해당 콘텐츠가 하단에서 몇 px 위로 올라와에 나타나는 효과가 나타날지 셋팅하는 값
         duration: 300, // 애니메이션 효과가 작동되는 시간
@@ -106,16 +98,5 @@ $(document).ready(function(){
     today = today + '(' + weekday[now.getDay()] + ')'
 
     $('.schedule .calendar .today h3').text(today)
-
-    function getcalendar() {
-        for(let i=0; i < 12; i++){
-            countday = new Date(now.setDate(now.getDate() + i))
-            dayText += countday.getDate()
-            dayText += weekday[countday.getDay()]
-        }
-        console.log(dayText);
-    }
-
-    getcalendar()
 
 })
