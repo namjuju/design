@@ -57,19 +57,31 @@ $(document).ready(function(){
     },
 });
 
-$('.visual .ctrl_btn button.stop').on('click', function(){
-    $(this).hide()
-    $('.visual .visual_btn .ctrl_btn button.play').show()
-    visual_swiper.autoplay.stop();  /* 일시정지 기능 */
-})
-$('.visual .ctrl_btn button.play').on('click', function(){
-    $(this).hide()
-    $('.visual .visual_btn .ctrl_btn button.stop').show()
-    visual_swiper.autoplay.start();  /* 재생 기능 */
-})
+    $('.visual .ctrl_btn button.stop').on('click', function(){
+        $(this).hide()
+        $('.visual .visual_btn .ctrl_btn button.play').show()
+        visual_swiper.autoplay.stop();  /* 일시정지 기능 */
+    })
+    $('.visual .ctrl_btn button.play').on('click', function(){
+        $(this).hide()
+        $('.visual .visual_btn .ctrl_btn button.stop').show()
+        visual_swiper.autoplay.start();  /* 재생 기능 */
+    })
 
     $('.list .list_wrap > ul > li').on('click', function(){
         $('.list .list_wrap > ul > li').removeClass('active')
         $(this).addClass('active')
+    })
+    $('.notice .notice_wrap > ul > li').on('click', function(){
+        $('.notice .notice_wrap > ul > li').removeClass('active')
+        $(this).addClass('active')
+    })
+    $('.notice .notice_wrap > ul > li > .detail > ul > li').on('mouseenter focusin', function(){
+        $('.notice .notice_wrap > ul > li > .detail > ul > li').removeClass('on')
+        $(this).addClass('on')
+    })
+    $('.notice .notice_wrap > ul > li > .detail > ul > li').on('mouseleave', function(){
+        $('.notice .notice_wrap > ul > li > .detail > ul > li').removeClass('on')
+        $(this).addClass('on')
     })
 })
