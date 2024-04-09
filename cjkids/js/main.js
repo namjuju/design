@@ -84,4 +84,38 @@ $(document).ready(function(){
         $('.notice .notice_wrap > ul > li > .detail > ul > li').removeClass('on')
         $(this).addClass('on')
     })
+    AOS.init({
+        offset: 50, // 해당 콘텐츠가 하단에서 몇 px 위로 올라와에 나타나는 효과가 나타날지 셋팅하는 값
+        duration: 300, // 애니메이션 효과가 작동되는 시간
+        easing: 'ease', // 가속도
+    });
+    
+    let now = new Date();
+    let weekday=new Array(7);
+    weekday[0]="일";
+    weekday[1]="월";
+    weekday[2]="화";
+    weekday[3]="수";
+    weekday[4]="목";
+    weekday[5]="금";
+    weekday[6]="토";
+    let countday
+    let dayText
+    let today = now.getMonth()+1
+    today = today + '/' + now.getDate();
+    today = today + '(' + weekday[now.getDay()] + ')'
+
+    $('.schedule .calendar .today h3').text(today)
+
+    function getcalendar() {
+        for(let i=0; i < 12; i++){
+            countday = new Date(now.setDate(now.getDate() + i))
+            dayText += countday.getDate()
+            dayText += weekday[countday.getDay()]
+        }
+        console.log(dayText);
+    }
+
+    getcalendar()
+
 })

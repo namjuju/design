@@ -887,6 +887,15 @@
     padding: 32px;
     position: relative;
 }
+.notice .notice_wrap > ul  > li.active .detail ul li a::before {
+    position: absolute;
+    left: 25px;
+    bottom: 80px;
+    width: calc(100% - 50px);
+    height: 1px;
+    background-color: #CFCFCF;
+    content: "";
+}
 .notice .notice_wrap > ul  > li.active .detail ul li.on a {
     border:2px solid transparent ;
     border-radius:20px;
@@ -904,9 +913,9 @@
     position: absolute;
     left: 0;
     top: 23px;
-    z-index: -1;
     width: 146px;
     height: 34px;
+    z-index: -1;
     background-color: #F4F4F4;
     border-radius: 0 20px 20px 0;
     content: "";
@@ -915,9 +924,9 @@
     position: absolute;
     left: 0;
     top: 23px;
-    z-index: -1;
     width: 146px;
     height: 34px;
+    z-index: -1;
     background-color: #FBF2DB;
     border-radius: 0 20px 20px 0;
     content: "";
@@ -933,7 +942,7 @@
     content: "";
     font-size: 18px;
 }
-.notice .notice_wrap > ul  > li.active .detail ul li a p::before {
+/*.notice .notice_wrap > ul  > li.active .detail ul li a p::before {
     position: absolute;
     left: 0;
     top: -25px;
@@ -941,7 +950,7 @@
     height: 1px;
     background-color: #CFCFCF;
     content: "";
-}
+}*/
 .notice .notice_wrap > ul > li .detail .more {
     position: absolute;
     right: 0;
@@ -962,4 +971,43 @@
     background-size: contain;
     background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.75 7.24998H0.75C0.5375 7.24998 0.359375 7.17808 0.215625 7.03428C0.071875 6.89046 0 6.71226 0 6.49967C0 6.28707 0.071875 6.10898 0.215625 5.9654C0.359375 5.82181 0.5375 5.75002 0.75 5.75002H5.75V0.750003C5.75 0.537502 5.8219 0.359376 5.9657 0.215626C6.10952 0.0718753 6.28772 0 6.5003 0C6.7129 0 6.89099 0.0718753 7.03457 0.215626C7.17816 0.359376 7.24995 0.537502 7.24995 0.750003V5.75002H12.25C12.4625 5.75002 12.6406 5.82192 12.7843 5.96572C12.9281 6.10954 13 6.28774 13 6.50032C13 6.71293 12.9281 6.89102 12.7843 7.0346C12.6406 7.17819 12.4625 7.24998 12.25 7.24998H7.24995V12.25C7.24995 12.4625 7.17805 12.6406 7.03425 12.7844C6.89043 12.9281 6.71223 13 6.49965 13C6.28705 13 6.10896 12.9281 5.96537 12.7844C5.82179 12.6406 5.75 12.4625 5.75 12.25V7.24998Z' fill='%23666666'/%3E%3C/svg%3E%0A");
     content: "";
+}
+
+.schedule {
+    background-color: #F8F8F6;
+    height: 734px;
+}
+.schedule h2 {
+    text-align: center;
+    font-size: 33px;
+    font-weight: 700;
+    padding-top: 50px;
+}
+.schedule .more {
+    float: right;
+    border: 1px solid #CFCFCF;
+    border-radius: 20px;
+    padding: 7px 65px 7px 31px;
+    position: relative;
+    margin-top: 20px;
+}
+.schedule .more::before {
+    position: absolute;
+    right: 27px;
+    top: 10px;
+    width: 13px;
+    height: 13px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.75 7.24998H0.75C0.5375 7.24998 0.359375 7.17808 0.215625 7.03428C0.071875 6.89046 0 6.71226 0 6.49967C0 6.28707 0.071875 6.10898 0.215625 5.9654C0.359375 5.82181 0.5375 5.75002 0.75 5.75002H5.75V0.750003C5.75 0.537502 5.8219 0.359376 5.9657 0.215626C6.10952 0.0718753 6.28772 0 6.5003 0C6.7129 0 6.89099 0.0718753 7.03457 0.215626C7.17816 0.359376 7.24995 0.537502 7.24995 0.750003V5.75002H12.25C12.4625 5.75002 12.6406 5.82192 12.7843 5.96572C12.9281 6.10954 13 6.28774 13 6.50032C13 6.71293 12.9281 6.89102 12.7843 7.0346C12.6406 7.17819 12.4625 7.24998 12.25 7.24998H7.24995V12.25C7.24995 12.4625 7.17805 12.6406 7.03425 12.7844C6.89043 12.9281 6.71223 13 6.49965 13C6.28705 13 6.10896 12.9281 5.96537 12.7844C5.82179 12.6406 5.75 12.4625 5.75 12.25V7.24998Z' fill='%23666666'/%3E%3C/svg%3E%0A");
+    content: "";
+}
+.schedule .calendar {
+    background-color: #FFF;
+    border-radius: 30px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 345px;
+    margin-top: 95px;
 }
