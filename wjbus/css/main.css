@@ -1197,7 +1197,7 @@
 }
 .intranet::before {
     position: absolute;
-    bottom: -80px;
+    bottom: -98px;
     right: 50%;
     z-index: 10;
     background-color: #46B035;
@@ -1250,9 +1250,6 @@
     .intranet {
         height: 130px;
     }
-    .intranet .txt {
-        margin-top: 105px;
-    }
     .intranet .txt span {
         font-size: 30px;
     }
@@ -1280,19 +1277,25 @@
     .intranet .txt p {
         font-size: 15px;
     }
+    .intranet::before {
+        bottom: -87px;
+    }
+    .intranet .txt {
+        margin-top: 108px;
+    }
 }
 @media screen and (max-width:450px) {
     .intranet {
         height: 100px;
     }
     .intranet::after {
-        top: 119%;
+        top: 129%;
         right: 5%;
         width: 30px;
         height: 20px;
     }
     .intranet .txt {
-        margin-top: 106px;
+        margin-top: 113px;
     }
     .intranet .txt span {
         font-size: 20px;
