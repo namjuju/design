@@ -43,18 +43,17 @@ $(document).ready(function(){
         $('.header').removeClass('menu_over')
     })
 
-    $('.header .gnb .gnb_open').on('click', function(){
+    $('.header .header_main .gnb .gnb_open').on('click', function(){
         $('.header').addClass('menu_open')
         $("html, body").css({overflow : "hidden", height : $(window).height()}).bind("scroll touchmove mousewheel", function(e){e.preventDefault();e.stopPropagation();return false;},function(){passive:false});
     })
-    $('.header .gnb .gnb_close').on('click', function(){
+    $('.header .header_main .gnb .gnb_close').on('click', function(){
         $('.header').removeClass('menu_open')
         $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
     })
 
-    $(".header .gnb ul.depth1 > li:has(.depth2) > a").on("click", function(e){
-        e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
-        if($(this).parent().hasClass('sub_open') == true){//sub_open있다면
+    $(".header .header_main .gnb ul.depth1 > li > a").on("click", function(){
+        if($(this).parent().hasClass('sub_open') == true){ 
             console.log('sub_open있음')
             $(this).parent().removeClass('sub_open')
             $(this).parent().find('ul.depth2').slideUp()
@@ -64,6 +63,7 @@ $(document).ready(function(){
             $(this).parent().find('ul.depth2').slideDown()
         }
     });
+
 
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
     autoplay: {  /* 팝업 자동 실행 */

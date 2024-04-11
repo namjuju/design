@@ -82,7 +82,7 @@ html, body {
         margin: 0 20px;  
     }
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:1024px){
     html, body {
         font-size: 13px;
     }

@@ -319,6 +319,16 @@
     .visual .visual_top .v_txt p {
         font-size: 20px;
     }
+    .visual .visual_top .search_box {
+        margin-top: 30px;
+        width: 497px;
+    }
+    .searchtag {
+        margin: 19px 0 0 62px;
+    }
+    .visual .visual_top .search_box .searchbar .search input[type="text"] {
+        font-size: 20px;
+    }
     .visual_box h3 {
         font-size: 21px;
         margin-bottom: 40px;
@@ -401,9 +411,12 @@
         margin-top: 54px;
         width: 580px;
     }
+    .visual .visual_top .search_box {
+        margin-top: 30px;
+        width: 480px;
+    }
     .searchtag {
-        display: flex;
-        margin: 19px 0 0 102px;
+        margin: 19px 0 0 47px;
     }
     .visual .visual_top {
         display: flex;
@@ -821,7 +834,6 @@
 }
 .list .list_wrap > ul > li.active .swiper {
     display: block;
-    margin: 0 -30px;
 }
 .list .list_wrap > ul > li .swiper ul {
     display: flex;
