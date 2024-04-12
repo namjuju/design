@@ -35,7 +35,8 @@
     display: block;
     line-height: 40px;
     position: relative;
-    transition: 0.3ms;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
 }
 .header .header_top .tnb_left ul li:hover a {
     font-weight: 500;
@@ -58,7 +59,8 @@
 }
 .header .header_top .tnb_right a {
     display: block;
-    transition: 0.3ms;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
 }
 .header .header_top .tnb_right a:hover {
     font-weight: 500;
@@ -178,6 +180,8 @@
     font-size: 22px;
     color: #444;
     padding: 0 27px;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
 }
 .header .header_main .gnb .depth1 > li > .depth2 {
     display: none;
@@ -206,6 +210,8 @@
     white-space:nowrap;
     line-height: 40px;
     text-align: center;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
 }
 @media screen and (min-width:1025px) {
     .header .header_main .gnb .depth1 > li.sub_over > a {

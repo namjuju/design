@@ -106,20 +106,36 @@ $(document).ready(function(){
         $(this).addClass('active')
     })
 
-    const list_swiper = new Swiper('.list .swiper', { /* 팝업을 감싼는 요소의 class명 */
-    slidesPerView: 3, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-        spaceBetween: 0, /* 팝업과 팝업 사이 여백 */
-        breakpoints: {
-            768: {
-                slidesPerView: 'auto', /* 사이즈제한 */
-                spaceBetween: 0,
+    const list_swiper = new Swiper('.list .swiper1', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 3, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+            spaceBetween: 0, /* 팝업과 팝업 사이 여백 */
+            breakpoints: {
+                768: {
+                    slidesPerView: 'auto', /* 사이즈제한 */
+                    spaceBetween: 0,
+                },
             },
+            pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
+            el: '.list .swiper1 + .pagination', /* 해당 요소의 class명 */
+            clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
         },
-        pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
-        el: '.list .pagination', /* 해당 요소의 class명 */
-        clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
-    },
     });
+
+    const list_swiper2 = new Swiper('.list .swiper2', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 3, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+            spaceBetween: 0, /* 팝업과 팝업 사이 여백 */
+            breakpoints: {
+                768: {
+                    slidesPerView: 'auto', /* 사이즈제한 */
+                    spaceBetween: 0,
+                },
+            },
+            pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
+            el: '.list .swiper2 + .pagination', /* 해당 요소의 class명 */
+            clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
+        },
+    });
+
 
     
     AOS.init({
@@ -146,8 +162,14 @@ $(document).ready(function(){
     $('.schedule .calendar .today h3').text(today)
 
     const swiper = new Swiper('.data .swiper', {
-        slidesPerView: '2.3',
-        spaceBetween: 20,
+        slidesPerView: '1',
+        spaceBetween: 0,
+        breakpoints: {
+            500: {    /* 768px 이상일때 적용 */
+                slidesPerView: 2.3,
+                spaceBetween: 20,
+            },
+        },
 
 	loop: true,
     centeredSlides: true,
@@ -158,19 +180,15 @@ $(document).ready(function(){
     });
 
     const banner_swiper = new Swiper('.banner .swiper', { /* 팝업을 감싼는 요소의 class명 */
-    slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-        spaceBetween: 0, /* 팝업과 팝업 사이 여백 */
+    slidesPerView: 4, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 10, /* 팝업과 팝업 사이 여백 */
         loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
         breakpoints: {
-            500: {    /* 768px 이상일때 적용 */
-                slidesPerView: 3,
-                spaceBetween: 0,
+            768: {
+                slidesPerView: '5', /* 사이즈제한 */
+                spaceBetween: 10,
             },
             1024: {
-                slidesPerView: 4,
-                spaceBetween: 0,
-            },
-            1320: {
                 slidesPerView: '6', /* 사이즈제한 */
                 spaceBetween: 0,
             },
