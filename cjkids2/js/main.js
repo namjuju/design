@@ -1,20 +1,20 @@
 $(document).ready(function(){
     let scroll_dir //방향 - 0보다 크면 위로 스크롤
-     let scroll_prev //이전 스크롤값
-     let scroll_curr //현재 스크롤값
+    let scroll_prev //이전 스크롤값
+    let scroll_curr //현재 스크롤값
  
      function scroll_chk(){
          scroll_prev = scroll_curr
          scroll_curr = $(window).scrollTop()
          scroll_dir = scroll_prev - scroll_curr
          console.log(scroll_dir)
-         if(scroll_curr > 300){
+         if(scroll_curr > 0){
              $('.header').addClass('fixed')
              if(scroll_dir > 0){ //위로스크롤 - 나타나야함
                  $('.header').attr('style','transform: translate(0, 0)')
                  /*transform: translate(0, -100px); */
              }else{ //아래로스크롤 - 사라져야함.
-                 $('.header').attr('style','transform: translate(0, -120px)')
+                 $('.header').attr('style','transform: translate(0, -100px)')
                  $('.header .gnb .depth1 > li').removeClass('on')
                  $('.header').removeClass('menu_over')
              }
@@ -29,30 +29,28 @@ $(document).ready(function(){
      })
  
   
-    $('.header .header_main .gnb ul.depth1 > li').on('mouseenter focusin', function(){
-        $('.header .header_main .gnb ul.depth1 > li').removeClass('sub_over')
+    $('.header .gnb ul.depth1 > li').on('mouseenter focusin', function(){
+        $('.header .gnb ul.depth1 > li').removeClass('sub_over')
         $(this).addClass('sub_over')
         $('.header').addClass('menu_over')
     })
-    $('.header .header_main .gnb').on('mouseleave', function(){
+    $('.header .gnb').on('mouseleave', function(){
         $('.header .gnb ul.depth1 > li').removeClass('sub_over')
         $('.header').removeClass('menu_over')
     })
-    $('.header .menu .search').on('focusin', function(){
-        $('.header .header_main .gnb ul.depth1 > li').removeClass('sub_over')
+    $('.header .tnb .lang').on('focusin', function(){
+        $('.header .gnb ul.depth1 > li').removeClass('sub_over')
         $('.header').removeClass('menu_over')
     })
-
-    $('.header .header_main .gnb .gnb_open').on('click', function(){
+    $('.header .gnb .gnb_open').on('click', function(){
         $('.header').addClass('menu_open')
         $("html, body").css({overflow : "hidden", height : $(window).height()}).bind("scroll touchmove mousewheel", function(e){e.preventDefault();e.stopPropagation();return false;},function(){passive:false});
     })
-    $('.header .header_main .gnb .gnb_close').on('click', function(){
+    $('.header .gnb .gnb_close').on('click', function(){
         $('.header').removeClass('menu_open')
         $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
     })
-
-    $(".header .header_main .gnb ul.depth1 > li > a").on("click", function(){
+    $(".header .gnb ul.depth1 > li > a").on("click", function(){
         if($(this).parent().hasClass('sub_open') == true){ 
             console.log('sub_open있음')
             $(this).parent().removeClass('sub_open')
@@ -198,5 +196,36 @@ $(document).ready(function(){
         prevEl: '.banner .prev',  
     },
     });
+
+
+
+
+
+
+    const footer_swiper = new Swiper('.footer .swiper', {
+        slidesPerView: 6, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 0, /* 팝업과 팝업 사이 여백 */
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: true,
+        },
+        loop: true,
+        
+        navigation: {
+            nextEl: '.footer .next',
+            prevEl: '.footer .prev',  
+        },
+    });
+
+    $('.footer .ctrl_btn button.stop').on('click', function(){
+        $(this).hide()
+        $('.footer .ctrl_btn button.play').show()
+        footer_swiper.autoplay.stop();
+    })
+    $('.footer .ctrl_btn button.play').on('click', function(){
+        $(this).hide()
+        $('.footer .ctrl_btn button.stop').show()
+        footer_swiper.autoplay.start();
+    })
 
 })

@@ -5,40 +5,67 @@
 /*
     파일명 : main.css
     작성자 : 김남주
-    작성일 : 2024.04.05
+    작성일 : 2024.04.15
     설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다)
 */
+
 .container {
+    width: 100%;
+    height: 1000px;
     margin-top: 200px;
 }
-.visual .visual_top  {
+.container .headlin {
     height: 220px;
+    position: relative;
+}
+.container .headlin::before {
+    position: absolute;
+    left: 0;
+    top: -48px;
+    height: 179px;
+    width: 349px;
+    z-index: -1;
+    background-image: url(../images/headlin_bg01.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    content: "";
+}
+.container .headlin::after {
+    position: absolute;
+    right: 0;
+    top: 59px;
+    height: 104px;
+    width: 458px;
+    z-index: -1;
+    background-image: url(../images/headlin_bg02.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    content: "";
+}
+@media screen and (min-width:1921px) {
+    .container .headlin::before {
+        width: 50%;
+    }
+    .container .headlin::after {
+        width: 40%;
+    }
+}
+.container .headlin .headlin_inner {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    margin: 77px 25px 0 25px;
 }
-.visual .visual_top .v_txt h2 {
-    font-size: 45px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-.visual .visual_top .v_txt p {
-    font-size: 23px;
-    color: #666;
-}
-.visual .visual_top .v_txt p span {
-    color: #579BD9;
-    font-weight: 500;
-}
-.visual .visual_top .search_box {
+.container .headlin .search_box {
     margin-top: 54px;
     width: 520px;
 }
-.visual .visual_top .search_box .searchbar .search {
+.container .headlin .search_box .searchbar .search {
     width: 100%;
     height: 75px;
-    border: 2px solid #A3B0D1;
+    border: 2px solid #B4CFDE;
+    background-color: #FFF;
     border-radius: 45px;
     margin: 0 auto;
     padding: 0 10px 0 41px;
@@ -47,13 +74,13 @@
     transition-duration: 300ms;
     transition-timing-function: ease-in-out;
 }
-.visual .visual_top .search_box .searchbar .search:hover {
+.container .headlin .search_box .searchbar .search:hover {
     box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
 }
-.visual .visual_top .search_box .searchbar .search label {
+.container .headlin .search_box .searchbar .search label {
     display: none;
 }
-.visual .visual_top .search_box .searchbar .search input[type="text"] {
+.container .headlin .search_box .searchbar .search input[type="text"] {
     font-size: 23px;
     font-weight: 700;
     color: #333;
@@ -61,35 +88,37 @@
     border: 0;
     outline: 0;
 }
-.visual .visual_top .search_box .searchbar .search input[type="text"]::placeholder {
+.container .headlin .search_box .searchbar .search input[type="text"]::placeholder {
     font-weight: 400;
     color: #999;
 }
-.visual .visual_top .search_box .searchbar .search input[type="submit"] {
+.container .headlin .search_box .searchbar .search input[type="submit"] {
     border: 0;
     background-color: transparent;
     font-size: 0;
     line-height: 0;
     width: 56px;
     height: 56px;
-    background-image: url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M56 28C56 43.464 43.464 56 28 56C12.536 56 0 43.464 0 28C0 12.536 12.536 0 28 0C43.464 0 56 12.536 56 28Z' fill='url(%23paint0_linear_111_8)' fill-opacity='0.5'/%3E%3Cpath d='M25.6511 36.8246C22.3948 36.8246 19.6388 35.72 17.3833 33.5107C15.1278 31.3014 14 28.6019 14 25.4123C14 22.2227 15.1278 19.5233 17.3833 17.314C19.6388 15.1047 22.3948 14 25.6511 14C28.9074 14 31.6634 15.1047 33.9189 17.314C36.1744 19.5233 37.3022 22.2227 37.3022 25.4123C37.3022 26.6999 37.0931 27.9142 36.6748 29.0555C36.2566 30.1967 35.689 31.2063 34.972 32.0841L41.5071 39.0591C41.8357 39.381 42 39.7907 42 40.2882C42 40.7856 41.8357 41.1953 41.5071 41.5172C41.1784 41.8391 40.7602 42 40.2523 42C39.7445 42 39.3262 41.8391 38.9976 41.5172L32.4625 34.5422C31.5663 35.2445 30.5356 35.8004 29.3705 36.2101C28.2054 36.6198 26.9656 36.8246 25.6511 36.8246ZM25.6511 33.3131C27.8917 33.3131 29.7962 32.545 31.3646 31.0087C32.933 29.4725 33.7173 27.607 33.7173 25.4123C33.7173 23.2176 32.933 21.3522 31.3646 19.8159C29.7962 18.2796 27.8917 17.5115 25.6511 17.5115C23.4105 17.5115 21.506 18.2796 19.9376 19.8159C18.3692 21.3522 17.585 23.2176 17.585 25.4123C17.585 27.607 18.3692 29.4725 19.9376 31.0087C21.506 32.545 23.4105 33.3131 25.6511 33.3131Z' fill='white'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_111_8' x1='26.6451' y1='1.80645' x2='26.6451' y2='57.8065' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23D3A1E4'/%3E%3Cstop offset='1' stop-color='%23678AE1'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M56 28C56 43.464 43.464 56 28 56C12.536 56 0 43.464 0 28C0 12.536 12.536 0 28 0C43.464 0 56 12.536 56 28Z' fill='url(%23paint0_linear_301_933)' fill-opacity='0.5'/%3E%3Cpath d='M25.6511 36.8246C22.3948 36.8246 19.6388 35.72 17.3833 33.5107C15.1278 31.3014 14 28.6019 14 25.4123C14 22.2227 15.1278 19.5233 17.3833 17.314C19.6388 15.1047 22.3948 14 25.6511 14C28.9074 14 31.6634 15.1047 33.9189 17.314C36.1744 19.5233 37.3022 22.2227 37.3022 25.4123C37.3022 26.6999 37.0931 27.9142 36.6748 29.0555C36.2566 30.1967 35.689 31.2063 34.972 32.0841L41.5071 39.0591C41.8357 39.381 42 39.7907 42 40.2882C42 40.7856 41.8357 41.1953 41.5071 41.5172C41.1784 41.8391 40.7602 42 40.2523 42C39.7445 42 39.3262 41.8391 38.9976 41.5172L32.4625 34.5422C31.5663 35.2445 30.5356 35.8004 29.3705 36.2101C28.2054 36.6198 26.9656 36.8246 25.6511 36.8246ZM25.6511 33.3131C27.8917 33.3131 29.7962 32.545 31.3646 31.0087C32.933 29.4725 33.7173 27.607 33.7173 25.4123C33.7173 23.2176 32.933 21.3522 31.3646 19.8159C29.7962 18.2796 27.8917 17.5115 25.6511 17.5115C23.4105 17.5115 21.506 18.2796 19.9376 19.8159C18.3692 21.3522 17.585 23.2176 17.585 25.4123C17.585 27.607 18.3692 29.4725 19.9376 31.0087C21.506 32.545 23.4105 33.3131 25.6511 33.3131Z' fill='white'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_301_933' x1='26.6451' y1='1.80645' x2='26.6451' y2='57.8065' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23A5E0E8'/%3E%3Cstop offset='1' stop-color='%235A7ACE'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: contain;
     margin-left: 44px;
     cursor: pointer;
 }
-.visual .visual_top .searchtag {
+.container .headlin .searchtag {
     display: flex;
     margin: 19px 0 0 67px;
 }
-.visual .visual_top .searchtag .s_tit {
+.container .headlin .searchtag .s_tit {
     margin-right: 37px;
 }
-.visual .visual_top .searchtag .s_tit span {
+.container .headlin .searchtag .s_tit span {
     position: relative;
     font-weight: 700;
     color: #A3B0D1;
 }
-.visual .visual_top .searchtag .s_tit span::after {
+.container .headlin .searchtag .s_tit span::after {
     position: absolute;
     top: 8px;
     right: -27px;
@@ -98,16 +127,126 @@
     background-color: #A3B0D1;
     content: "";
 }
-.visual .visual_top .searchtag .s_tag ul {
+.container .headlin .searchtag .s_tag ul {
     display: flex;
 }
-
-.visual .visual_top .searchtag .s_tag ul li a {
+.container .headlin .searchtag .s_tag ul li a {
     display: block;
     font-size: 15PX;
     color: #999;
     padding: 0 8px ;
 }
+.container .headlin .txt h2 {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.container .headlin .txt p {
+    font-size: 23px;
+    color: #666;
+}
+.container .headlin .txt p span {
+    color: #579BD9;
+    font-weight: 500;
+}
+
+@media screen and (max-width:1280px) {
+    .container .headlin .headlin_inner {
+        display: block;
+    }
+    .container .headlin::after {
+        top: 147px;
+    }
+    .container .headlin .search_box {
+        margin: auto;
+        width: 580px;
+    }
+    .container .headlin .searchtag {
+        margin: 19px 0 0 47px;
+    }
+    .container .headlin .txt {
+        margin-top: 25px;
+        text-align: center;
+    }
+    .container .headlin .txt h2 {
+        font-size: 35px;
+        color: #20405d;
+    }
+    .container .headlin .txt h2 br {
+        display: none;
+    }
+}
+@media screen and (max-width:768px) {
+    .container {
+        margin-top: 111px;
+    }
+    .container .headlin .search_box {
+        width: 350px;
+    }
+    .container .headlin .search_box .searchbar .search input[type="submit"] {
+        width: 39px;
+        height: 39px;
+        margin-left: 59px;
+    }
+    .container .headlin .search_box .searchbar .search input[type="text"] {
+        font-size: 14px;
+    }
+    .container .headlin .search_box .searchbar .search {
+        height: 55px;
+        border-radius: 45px;
+        padding: 0 5px 0 20px;
+    }
+    .container .headlin .searchtag {
+        display: none;
+    }
+    .container .headlin .txt h2 {
+        font-size: 17px;
+        margin-bottom: 7px;
+    }
+    .container .headlin .txt p {
+        font-size: 13px;
+        line-height: 1.2;
+    }
+}
+@media screen and (max-width:450px) {
+    .container {
+        margin-top: 70px;
+    }
+    .container .headlin .headlin_inner {
+        height: 167px;
+        margin: auto;
+    }
+    .container .headlin .search_box {
+        width: 277px;
+    }
+    .container .headlin .search_box .searchbar .search input[type="submit"] {
+        width: 31px;
+        height: 31px;
+        margin-left: 69px;
+    }
+    .container .headlin .search_box .searchbar .search input[type="text"] {
+        font-size: 13px;
+    }
+    .container .headlin .search_box .searchbar .search {
+        height: 45px;
+        border-radius: 45px;
+        padding: 0 5px 0 20px;
+    }
+    .container .headlin .searchtag {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 .visual .visual_box {
     display: flex;
     justify-content: space-between;
@@ -391,7 +530,7 @@
         background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='25' cy='25' r='25' fill='%23009B64'/%3E%3Cpath d='M32.1269 25.9483H16.75C16.5372 25.9483 16.359 25.8765 16.2154 25.7329C16.0718 25.5893 16 25.4111 16 25.1983C16 24.9855 16.0718 24.8073 16.2154 24.6637C16.359 24.5201 16.5372 24.4483 16.75 24.4483H32.1269L26.9577 19.2791C26.809 19.1304 26.7356 18.9563 26.7375 18.757C26.7394 18.5576 26.8179 18.3804 26.9731 18.2252C27.1282 18.0804 27.3038 18.0054 27.5 18.0002C27.6961 17.9951 27.8718 18.0701 28.0269 18.2252L34.3672 24.5656C34.4608 24.6592 34.5269 24.7579 34.5653 24.8618C34.6038 24.9656 34.623 25.0778 34.623 25.1983C34.623 25.3188 34.6038 25.431 34.5653 25.5348C34.5269 25.6387 34.4608 25.7374 34.3672 25.831L28.0269 32.1713C27.8884 32.3098 27.717 32.3806 27.5125 32.3838C27.308 32.387 27.1282 32.3162 26.9731 32.1713C26.8179 32.0162 26.7404 31.838 26.7404 31.6367C26.7404 31.4355 26.8179 31.2573 26.9731 31.1021L32.1269 25.9483Z' fill='white' stroke='white'/%3E%3C/svg%3E%0A"); 
     }
 }
-@media screen and (max-width:1260px) {
+@media screen and (max-width:1280px) {
     .visual .visual_top .search_box {
         margin: auto;
         width: 580px;

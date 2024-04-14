@@ -62,16 +62,6 @@ html, body {
     width: 1280px; /* 홈페이지 넓이 */
     margin: 0 auto;  /* 가운데 정렬 */
 }
-.wrapper2 {
-    width: 1716px; /* 홈페이지 넓이 */
-    margin: 0 auto;  /* 가운데 정렬 */
-}
-@media screen and (max-width:1756px) {
-    .wrapper2 {
-        width: auto; /* 홈페이지 넓이 */
-        margin: 0 20px;  /* 가운데 정렬 */
-    }
-}
 #wrap {
     width: 100%;
     overflow: hidden;
@@ -82,7 +72,7 @@ html, body {
         margin: 0 20px;  
     }
 }
-@media screen and (max-width:1024px){
+@media screen and (max-width:768px){
     html, body {
         font-size: 13px;
     }
