@@ -215,4 +215,10 @@ $(document).ready(function(){
         footer_swiper.autoplay.start();
     })
 
+    $('.footer .top').on('click', function(){
+        $('html, boby').animate({
+            scrollTop : 0
+        },500)
+    })
+
 })
