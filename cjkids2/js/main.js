@@ -10,10 +10,9 @@ $(document).ready(function(){
          console.log(scroll_dir)
          if(scroll_curr > 0){
              $('.header').addClass('fixed')
-             if(scroll_dir > 0){ //위로스크롤 - 나타나야함
+             if(scroll_dir > 0){
                  $('.header').attr('style','transform: translate(0, 0)')
-                 /*transform: translate(0, -100px); */
-             }else{ //아래로스크롤 - 사라져야함.
+             }else{ 
                  $('.header').attr('style','transform: translate(0, -100px)')
                  $('.header .gnb .depth1 > li').removeClass('on')
                  $('.header').removeClass('menu_over')
@@ -95,8 +94,8 @@ $(document).ready(function(){
         visual_swiper.autoplay.start();  /* 재생 기능 */
     })
 
-    $('.list .list_wrap > ul > li').on('click', function(){
-        $('.list .list_wrap > ul > li').removeClass('active')
+    $('.icon .icon_inner > ul > li').on('click', function(){
+        $('.icon .icon_inner > ul > li').removeClass('active')
         $(this).addClass('active')
     })
     $('.notice .notice_wrap > ul > li').on('click', function(){
@@ -104,7 +103,7 @@ $(document).ready(function(){
         $(this).addClass('active')
     })
 
-    const list_swiper = new Swiper('.list .swiper1', { /* 팝업을 감싼는 요소의 class명 */
+    const icon_swiper = new Swiper('.icon .swiper1', { /* 팝업을 감싼는 요소의 class명 */
         slidesPerView: 3, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
             spaceBetween: 0, /* 팝업과 팝업 사이 여백 */
             breakpoints: {
@@ -114,12 +113,12 @@ $(document).ready(function(){
                 },
             },
             pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
-            el: '.list .swiper1 + .pagination', /* 해당 요소의 class명 */
+            el: '.icon .swiper1 + .pagination', /* 해당 요소의 class명 */
             clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
         },
     });
 
-    const list_swiper2 = new Swiper('.list .swiper2', { /* 팝업을 감싼는 요소의 class명 */
+    const icon_swiper2 = new Swiper('.icon .swiper2', { /* 팝업을 감싼는 요소의 class명 */
         slidesPerView: 3, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
             spaceBetween: 0, /* 팝업과 팝업 사이 여백 */
             breakpoints: {
@@ -129,7 +128,7 @@ $(document).ready(function(){
                 },
             },
             pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
-            el: '.list .swiper2 + .pagination', /* 해당 요소의 class명 */
+            el: '.icon .swiper2 + .pagination', /* 해당 요소의 class명 */
             clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
         },
     });
@@ -157,43 +156,25 @@ $(document).ready(function(){
     today = today + '/' + now.getDate();
     today = today + '(' + weekday[now.getDay()] + ')'
 
-    $('.schedule .calendar .today h3').text(today)
+    $('.schedule .today h3').text(today)
 
-    const swiper = new Swiper('.data .swiper', {
-        slidesPerView: '1',
-        spaceBetween: 0,
-        breakpoints: {
-            500: {    /* 768px 이상일때 적용 */
-                slidesPerView: 2.3,
-                spaceBetween: 20,
-            },
-        },
 
-	loop: true,
-    centeredSlides: true,
-	navigation: {
-		nextEl: '.data .next',
-		prevEl: '.data .prev',  
-	},
-    });
-
-    const banner_swiper = new Swiper('.banner .swiper', { /* 팝업을 감싼는 요소의 class명 */
-    slidesPerView: 4, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-        spaceBetween: 10, /* 팝업과 팝업 사이 여백 */
-        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+    const schedule_swiper = new Swiper('.schedule .swiper', { /* 팝업을 감싼는 요소의 class명 */
+    slidesPerView: 6, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 5, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
             768: {
-                slidesPerView: '5', /* 사이즈제한 */
+                slidesPerView: '10', /* 사이즈제한 */
                 spaceBetween: 10,
             },
             1024: {
-                slidesPerView: '6', /* 사이즈제한 */
-                spaceBetween: 0,
+                slidesPerView: '14', /* 사이즈제한 */
+                spaceBetween: 10,
             },
         },
     navigation: {  /* 이전, 다음 버튼 */
-        nextEl: '.banner .next',  /* 다음 버튼의 클래스명 */
-        prevEl: '.banner .prev',  
+        nextEl: '.schedule .next',  /* 다음 버튼의 클래스명 */
+        prevEl: '.schedule .prev',  
     },
     });
 
@@ -203,8 +184,8 @@ $(document).ready(function(){
 
 
     const footer_swiper = new Swiper('.footer .swiper', {
-        slidesPerView: 6, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-        spaceBetween: 0, /* 팝업과 팝업 사이 여백 */
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 10, /* 팝업과 팝업 사이 여백 */
         autoplay: {
             delay: 3000,
             disableOnInteraction: true,
@@ -215,7 +196,13 @@ $(document).ready(function(){
             nextEl: '.footer .next',
             prevEl: '.footer .prev',  
         },
+        on : {
+            slideChange: function(){
+                
+            },
+        },
     });
+    
 
     $('.footer .ctrl_btn button.stop').on('click', function(){
         $(this).hide()
