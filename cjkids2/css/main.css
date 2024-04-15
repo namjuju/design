@@ -1596,15 +1596,23 @@ background-color: #4BBF6B;
 .data .more a:hover:before {
     transform: rotate(180deg);
 }
+.data .data_inner {
+    margin-top: 50px;
+}
 .data .data_inner ul {
     display: flex;
     justify-content: space-between;
 }
 .data .data_inner ul li a {
     display: block;
+    text-align: center;
 }
 .data .data_inner ul li a .photo {
     background-color: #F5F8FD;
+    width: 299px;
+    height: 399px;
+    border-radius: 20px;
+    position: relative;
 }
 .data .data_inner ul li a span {
     position: absolute;
@@ -1613,5 +1621,20 @@ background-color: #4BBF6B;
     width: 139px;
     height: 46px;
     background-color: #387ED2;
-    text-align: center;
+    color: #FFF;
+    border-radius: 20px 0 20px 0;
+    line-height: 46px;
+}
+.data .data_inner ul li a img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+.data .data_inner ul li a p {
+    margin-top: 10px;
+    font-weight: 500;
 }
