@@ -161,7 +161,7 @@ $(document).ready(function(){
 
     const schedule_swiper = new Swiper('.schedule .swiper', { /* 팝업을 감싼는 요소의 class명 */
     slidesPerView: 6, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-        spaceBetween: 5, /* 팝업과 팝업 사이 여백 */
+        spaceBetween: 0, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
             768: {
                 slidesPerView: '10', /* 사이즈제한 */
@@ -202,6 +202,10 @@ $(document).ready(function(){
             },
         },
     });
+
+    footer_swiper.on('slideChange', function(){
+        footer_swiper.update()
+    })
     
 
     $('.footer .ctrl_btn button.stop').on('click', function(){
